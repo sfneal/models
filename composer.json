@@ -1,11 +1,11 @@
 {
-    "name": "sfneal/builder",
+    "name": "sfneal/builders",
     "description": "Boilerplate for PHP package repo's",
     "keywords": [
         "sfneal",
         "builder"
     ],
-    "homepage": "https://github.com/sfneal/builder",
+    "homepage": "https://github.com/sfneal/builders",
     "license": "MIT",
     "type": "library",
     "authors": [

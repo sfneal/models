@@ -4,7 +4,7 @@ namespace Sfneal\Models;
 //use App\Builders\QueryBuilder;
 use Sfneal\Models\Traits\UploadDirectory;
 use DateTimeInterface;
-use Illuminate\Database\Eloquent\Builder;
+//use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

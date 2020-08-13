@@ -2,12 +2,12 @@
 
 namespace Sfneal\Builders;
 
-use App\Models\Base\AbstractModel;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
 use Sfneal\Builders\Traits\CountAndPaginate;
+use Sfneal\Models\AbstractModel;
 
 class QueryBuilder extends EloquentBuilder
 {

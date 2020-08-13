@@ -1,9 +1,9 @@
 # Very short description of the package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/query-builder.svg?style=flat-square)](https://packagist.org/packages/sfneal/query-builder)
-[![Build Status](https://img.shields.io/travis/sfneal/query-builder/master.svg?style=flat-square)](https://travis-ci.org/sfneal/query-builder)
-[![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/query-builder.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/query-builder)
-[![Total Downloads](https://img.shields.io/packagist/dt/sfneal/query-builder.svg?style=flat-square)](https://packagist.org/packages/sfneal/query-builder)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/builder.svg?style=flat-square)](https://packagist.org/packages/sfneal/builder)
+[![Build Status](https://img.shields.io/travis/sfneal/builder/master.svg?style=flat-square)](https://travis-ci.org/sfneal/builder)
+[![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/builder.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/builder)
+[![Total Downloads](https://img.shields.io/packagist/dt/sfneal/builder.svg?style=flat-square)](https://packagist.org/packages/sfneal/builder)
 
 Eloquent\Builder wrapper with extended functionality
 
@@ -14,7 +14,7 @@ Eloquent\Builder wrapper with extended functionality
 You can install the package via composer:
 
 ```bash
-composer require sfneal/query-builder
+composer require sfneal/builder
 ```
 
 ## Usage

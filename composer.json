@@ -1,11 +1,11 @@
 {
-    "name": "sfneal/query-builder",
+    "name": "sfneal/builder",
     "description": "Boilerplate for PHP package repo's",
     "keywords": [
         "sfneal",
-        "query-builder"
+        "builder"
     ],
-    "homepage": "https://github.com/sfneal/query-builder",
+    "homepage": "https://github.com/sfneal/builder",
     "license": "MIT",
     "type": "library",
     "authors": [

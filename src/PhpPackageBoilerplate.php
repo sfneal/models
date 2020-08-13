@@ -1,8 +1,8 @@
 <?php
 
-namespace Sfneal\PhpPackageBoilerplate;
+namespace Sfneal\Models;
 
-class PhpPackageBoilerplate
+class Models
 {
     // Build your next great package.
 }

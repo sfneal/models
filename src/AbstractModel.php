@@ -1,12 +1,13 @@
 <?php
+
 namespace Sfneal\Models;
 
 //use App\Builders\QueryBuilder;
-use Sfneal\Models\Traits\UploadDirectory;
 use DateTimeInterface;
-//use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Sfneal\Models\Traits\UploadDirectory;
 
 // TODO: create package LaravelModels
 abstract class AbstractModel extends Model
@@ -43,42 +44,46 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Max number of hours ago a model instance could have been created ago and considered 'new'
+     * Max number of hours ago a model instance could have been created ago and considered 'new'.
      */
     private const IS_NEW_MAX_HOURS = 168;
 
     /**
-     * Determine if a model instance 'is new' if it was created within the time frame
+     * Determine if a model instance 'is new' if it was created within the time frame.
      *
      * @return bool
      */
-    public function isNew(): bool {
+    public function isNew(): bool
+    {
         if (empty($this->created_at)) {
             return false;
         }
-        return strtotime($this->created_at) >= strtotime('-' . self::IS_NEW_MAX_HOURS . ' hours');
+
+        return strtotime($this->created_at) >= strtotime('-'.self::IS_NEW_MAX_HOURS.' hours');
     }
 
     /**
-     * Determine how new a model instance is by subtracting the current time with the created_at time
+     * Determine how new a model instance is by subtracting the current time with the created_at time.
      *
      * @return false|float
      */
-    public function howNew() {
+    public function howNew()
+    {
         return round((time() - strtotime($this->created_at)) / (60 * 60 * 24));
     }
 
     /**
-     * Return the value of the 'is new' column (default is 'created_at')
+     * Return the value of the 'is new' column (default is 'created_at').
      *
      * @return string
      */
-    public function getIsNewColumn() {
+    public function getIsNewColumn()
+    {
         return $this->getCreatedAtColumn();
     }
 
     /**
-     * Determine if a model has an attribute
+     * Determine if a model has an attribute.
      *
      *  - Optionally determine if the attribute is fillable.
      *  - Allows $attr to be null for conditionals where a column may not exist
@@ -87,36 +92,38 @@ abstract class AbstractModel extends Model
      * @param bool $is_fillable
      * @return bool
      */
-    public function hasAttribute(string $attr = null, bool $is_fillable = false): bool {
+    public function hasAttribute(string $attr = null, bool $is_fillable = false): bool
+    {
         // Determine that the attribute exists and optionally weather it is fillable
-        return (
+        return
             isset($attr) &&
             array_key_exists($attr, $this->attributes) &&
-            ($is_fillable ? array_key_exists($attr, $this->fillable) : true)
-        );
+            ($is_fillable ? array_key_exists($attr, $this->fillable) : true);
     }
 
     /**
-     * Determine if a model has attribute that is also null
+     * Determine if a model has attribute that is also null.
      *
      * @param string $attr
      * @return bool
      */
-    public function hasNullAttribute(string $attr): bool {
+    public function hasNullAttribute(string $attr): bool
+    {
         return $this->hasAttribute($attr) && is_null($this->getAttribute($attr));
     }
 
     /**
-     * Retrieve an integer has of the model instance's ID
+     * Retrieve an integer has of the model instance's ID.
      *
      * @return int
      */
-    public function getIdHashAttribute() {
+    public function getIdHashAttribute()
+    {
         return crc32($this->getKey());
     }
 
     /**
-     * Retrieve the 'created_at' attribute mutated to human readable datetime
+     * Retrieve the 'created_at' attribute mutated to human readable datetime.
      *
      * @return string
      */
@@ -126,7 +133,7 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Returns the default 'label' for a model instance
+     * Returns the default 'label' for a model instance.
      *
      * @return mixed
      */
@@ -136,7 +143,7 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Retrieve a Model's table name statically
+     * Retrieve a Model's table name statically.
      *
      * @return mixed
      */
@@ -146,7 +153,7 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Retrieve a Model's primary key statically
+     * Retrieve a Model's primary key statically.
      *
      * @return mixed
      */
@@ -156,51 +163,49 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Determine if a Model was recently 'created'
+     * Determine if a Model was recently 'created'.
      *
      * @return bool
      */
-    public function wasCreated(): bool {
+    public function wasCreated(): bool
+    {
         return $this->wasRecentlyCreated;
     }
 
     /**
-     * Determine if a Model was recently 'updated'
+     * Determine if a Model was recently 'updated'.
      *
      * @return bool
      */
-    public function wasUpdated(): bool {
+    public function wasUpdated(): bool
+    {
         return $this->wasChanged();
     }
 
     /**
-     * Determine if a Model was recently 'deleted'
+     * Determine if a Model was recently 'deleted'.
      *
      * @return bool
      */
-    public function wasDeleted(): bool {
-        return !$this->exists || !is_null($this->deleted_at);
+    public function wasDeleted(): bool
+    {
+        return ! $this->exists || ! is_null($this->deleted_at);
     }
 
     /**
-     * Retrieve the most recent Model change
+     * Retrieve the most recent Model change.
      *
      * @return string
      */
-    public function mostRecentChange(): string {
+    public function mostRecentChange(): string
+    {
         if ($this->wasCreated()) {
             return 'created';
-        }
-
-        elseif ($this->wasUpdated()) {
+        } elseif ($this->wasUpdated()) {
             return 'updated';
-        }
-
-        elseif ($this->wasDeleted()) {
+        } elseif ($this->wasDeleted()) {
             return 'deleted';
-        }
-
-        else {
+        } else {
             return 'unchanged';
         }
     }

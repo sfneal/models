@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models;
-
 
 use Sfneal\Models\Interfaces\IsPublicInterface;
 use Sfneal\Models\Interfaces\UpdatePublicStatusInterface;

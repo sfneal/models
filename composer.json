@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Sfneal\\PhpPackageBoilerplate\\": "src"
+            "Sfneal\\Builders\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sfneal\\PhpPackageBoilerplate\\Tests\\": "tests"
+            "Sfneal\\Builders\\Tests\\": "tests"
         }
     },
     "scripts": {

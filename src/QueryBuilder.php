@@ -1,22 +1,20 @@
 <?php
 
-
 namespace Sfneal\Builders;
 
-use Sfneal\Builders\Traits\CountAndPaginate;
 use App\Models\Base\AbstractModel;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
-
+use Sfneal\Builders\Traits\CountAndPaginate;
 
 class QueryBuilder extends EloquentBuilder
 {
     use CountAndPaginate;
 
     /**
-     * @var string Declare a custom $raw MySQL select string to be used by selectRawJson()
+     * @var string Declare a custom MySQL select string to be used by selectRawJson()
      */
     protected $selectRawJson;
 
@@ -47,7 +45,7 @@ class QueryBuilder extends EloquentBuilder
     }
 
     /**
-     * Set the $tableName & $primaryKeyName properties
+     * Set the $tableName & $primaryKeyName properties.
      *
      * @return void
      */
@@ -61,7 +59,7 @@ class QueryBuilder extends EloquentBuilder
     }
 
     /**
-     * Retrieve a concatenation string that combines two columns in a table into a single column
+     * Retrieve a concatenation string that combines two columns in a table into a single column.
      *
      * @param string $column1
      * @param string $column2
@@ -79,7 +77,7 @@ class QueryBuilder extends EloquentBuilder
     }
 
     /**
-     * Retrieve a MySQL if statement that can be used within a query
+     * Retrieve a MySQL if statement that can be used within a query.
      *
      * @param string $condition
      * @param string $expr_true
@@ -92,103 +90,116 @@ class QueryBuilder extends EloquentBuilder
     }
 
     /**
-     * Wildcard where like query to determine if any part of the value is found
+     * Wildcard where like query to determine if any part of the value is found.
      *
      * @param string $column
      * @param $value
      * @return $this
      */
-    public function whereLike(string $column, $value) {
+    public function whereLike(string $column, $value)
+    {
         $this->where($column, 'LIKE', '%'.$value.'%');
+
         return $this;
     }
 
     /**
-     * Wildcard or where like query to determine if any part of the value is found
+     * Wildcard or where like query to determine if any part of the value is found.
      *
      * @param string $column
      * @param $value
      * @return $this
      */
-    public function orWhereLike(string $column, $value) {
+    public function orWhereLike(string $column, $value)
+    {
         $this->orWhere($column, 'LIKE', '%'.$value.'%');
+
         return $this;
     }
 
     /**
-     * Retrieve a flat, single-dimensional array of results without keys
+     * Retrieve a flat, single-dimensional array of results without keys.
      *
      * @param string $column
      * @return array
      */
-    public function getFlatArray(string $column) {
+    public function getFlatArray(string $column)
+    {
         return array_map(function ($collection) use ($column) {
             return $collection[$column];
         }, $this->distinct()->get($column)->toArray());
     }
 
     /**
-     * Retrieve raw query results formatted for Ajax select2 form inputs
+     * Retrieve raw query results formatted for Ajax select2 form inputs.
      *
      * @param string|null $raw
      * @return $this
      */
-    public function selectRawJson(string $raw = null) {
+    public function selectRawJson(string $raw = null)
+    {
         $this->withoutGlobalScopes();
         $this->selectRaw($raw ?? $this->selectRawJson);
+
         return $this;
     }
 
     /**
-     * Order query results by the 'created_at' column
+     * Order query results by the 'created_at' column.
      *
      * @param string $direction
      * @return $this
      */
-    public function orderByCreatedAt(string $direction = 'desc') {
+    public function orderByCreatedAt(string $direction = 'desc')
+    {
         $this->orderBy('created_at', $direction);
+
         return $this;
     }
 
     /**
-     * Retrieve the 'next' Model in the database
+     * Retrieve the 'next' Model in the database.
      *
      * @param int|null $model_id
      * @return QueryBuilder|Collection|Model|null
      */
-    public function getNextModel(int $model_id = null) {
+    public function getNextModel(int $model_id = null)
+    {
         return $this->find($this->getNextModelId($model_id));
     }
 
     /**
-     * Retrieve the 'previous' Model in the database
+     * Retrieve the 'previous' Model in the database.
      *
      * @param int|null $model_id
      * @return QueryBuilder|Collection|Model|null
      */
-    public function getPreviousModel(int $model_id = null) {
+    public function getPreviousModel(int $model_id = null)
+    {
         return $this->find($this->getPreviousModelId($model_id));
     }
 
     /**
-     * Retrieve the 'next' Model's ID
+     * Retrieve the 'next' Model's ID.
      *
      * @param int|null $model_id
      * @return mixed
      */
-    public function getNextModelId(int $model_id = null) {
+    public function getNextModelId(int $model_id = null)
+    {
         return $this
             ->where($this->model->getKeyName(), '>', $model_id ?? $this->model->getKey())
             ->min($this->model->getKeyName());
     }
 
     /**
-     * Retrieve the 'previous' Model's ID
+     * Retrieve the 'previous' Model's ID.
      *
      * @param int|null $model_id
      * @return mixed
      */
-    public function getPreviousModelId(int $model_id = null) {
+    public function getPreviousModelId(int $model_id = null)
+    {
         return $this
             ->where($this->model->getKeyName(), '<', $model_id ?? $this->model->getKey())
             ->max($this->model->getKeyName());

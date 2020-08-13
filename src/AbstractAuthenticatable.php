@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models;
-
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\MustVerifyEmail;

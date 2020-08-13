@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models;
-
 
 use Illuminate\Database\Eloquent\Relations\Concerns\AsPivot;
 

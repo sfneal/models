@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-// TODO: create package LaravelModels
+
 abstract class AbstractModel extends Model
 {
     use SoftDeletes,

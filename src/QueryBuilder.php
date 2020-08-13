@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
 use Sfneal\Builders\Traits\CountAndPaginate;
-use Sfneal\Models\AbstractModel;
 
 class QueryBuilder extends EloquentBuilder
 {
@@ -19,7 +18,7 @@ class QueryBuilder extends EloquentBuilder
     protected $selectRawJson;
 
     /**
-     * @var Model|AbstractModel
+     * @var Model
      */
     protected $targetModel;
 

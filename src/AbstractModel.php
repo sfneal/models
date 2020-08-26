@@ -88,7 +88,7 @@ abstract class AbstractModel extends Model
      *  - Optionally determine if the attribute is fillable.
      *  - Allows $attr to be null for conditionals where a column may not exist
      *
-     * @param string $attr
+     * @param string|null $attr
      * @param bool $is_fillable
      * @return bool
      */

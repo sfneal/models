@@ -17,8 +17,43 @@ composer require sfneal/models
 
 ## Usage
 
+`AbstractModel`, `AbstractPivot`, & `AbstractAuthenticatable` can be used as parent classes the same way Eloquent's `Model`, `Pivot` & `Authenticatable` can be used.  `AbstractModel` uses `Sfneal\Builders\QueryBuilder` as the default Eloquent Query Builder (see [sfneal/builders](https://packagist.org/packages/sfneal/models).
+
 ``` php
-// Usage description here
+class YourModel extends AbstractModel
+{
+    protected $table = 'your_model';
+    protected $primaryKey = 'your_model_id';
+    
+    protected $fillable = [
+        'your_model_id',
+        //
+    ];
+} 
+```
+
+Models that extend the `AbstractModel` class will have access to a variety of public access to a variety of methods that extends many of `Models` existing functionality's.
+
+ - 'Newness' - methods to detetmine if a Model is new (useful for apps with CMS) or how new a model is
+ - 'Changed' - methods to check if a Model was recently created, updated, deleted or unchanged
+
+``` php
+// Create a new Model record
+$model = YourModel::query()->create($data);
+
+// returns true
+$model->wasCreated();
+
+// Update the Model
+$model->update([
+	'some_attribute' => 'blue'
+]);	
+
+// returns false
+$model->wasCreated();
+
+// returns true
+$model->wasUpdated();
 ```
 
 ### Testing

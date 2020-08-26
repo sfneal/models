@@ -1,6 +1,6 @@
 {
     "name": "sfneal/models",
-    "description": "Boilerplate for PHP package repo's",
+    "description": "Eloquent Model wrapper with extended functionality",
     "keywords": [
         "sfneal",
         "models"

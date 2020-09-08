@@ -12,3 +12,7 @@ All notable changes to `models` will be documented in this file
 
 ## 0.1.2 - 2020-08-26
 - update documentation
+
+
+## 0.1.2 - 2020-08-26
+- fix composer.json to allow for use of laravel/framework:8.0

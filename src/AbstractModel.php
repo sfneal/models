@@ -15,6 +15,13 @@ abstract class AbstractModel extends Model
         UploadDirectory;
 
     /**
+     * Retrieve the datetime format used in the timestamp attribute accessors
+     *
+     * @return string
+     */
+    protected $timestampFormat = 'm/d/Y h:i a';
+
+    /**
      * Query Builder.
      * @param $query
      * @return QueryBuilder
@@ -208,5 +215,53 @@ abstract class AbstractModel extends Model
         } else {
             return 'unchanged';
         }
+    }
+
+    /**
+     * Retrieve the 'updated_at' attribute mutated to timestamp string
+     *
+     *  - 'updated_timestamp' attribute accessor
+     *
+     * @return string
+     */
+    public function getUpdatedTimestampAttribute(): string
+    {
+        return date($this->timestampFormat, strtotime($this->updated_at));
+    }
+
+    /**
+     * Retrieve the 'created_at' attribute mutated to timestamp string
+     *
+     *  - 'created_timestamp' attribute accessor
+     *
+     * @return string
+     */
+    public function getCreatedTimestampAttribute(): string
+    {
+        return date($this->timestampFormat, strtotime($this->created_at));
+    }
+
+    /**
+     * Retrieve the 'updated_at' attribute mutated to difference for humans string
+     *
+     *  - 'updated_for_humans' attribute accessor
+     *
+     * @return string
+     */
+    public function getUpdatedForHumansAttribute(): string
+    {
+        return $this->updated_at->diffForHumans();
+    }
+
+    /**
+     * Retrieve the 'created_at' attribute mutated to difference for humans string
+     *
+     *  - 'created_for_humans' attribute accessor
+     *
+     * @return string
+     */
+    public function getCreatedForHumansAttribute(): string
+    {
+        return $this->created_at->diffForHumans();
     }
 }

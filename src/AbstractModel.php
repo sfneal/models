@@ -15,7 +15,7 @@ abstract class AbstractModel extends Model
         UploadDirectory;
 
     /**
-     * Retrieve the datetime format used in the timestamp attribute accessors
+     * Retrieve the datetime format used in the timestamp attribute accessors.
      *
      * @return string
      */
@@ -218,7 +218,7 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Retrieve the 'updated_at' attribute mutated to timestamp string
+     * Retrieve the 'updated_at' attribute mutated to timestamp string.
      *
      *  - 'updated_timestamp' attribute accessor
      *
@@ -230,7 +230,7 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Retrieve the 'created_at' attribute mutated to timestamp string
+     * Retrieve the 'created_at' attribute mutated to timestamp string.
      *
      *  - 'created_timestamp' attribute accessor
      *
@@ -242,7 +242,7 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Retrieve the 'updated_at' attribute mutated to difference for humans string
+     * Retrieve the 'updated_at' attribute mutated to difference for humans string.
      *
      *  - 'updated_for_humans' attribute accessor
      *
@@ -254,7 +254,7 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Retrieve the 'created_at' attribute mutated to difference for humans string
+     * Retrieve the 'created_at' attribute mutated to difference for humans string.
      *
      *  - 'created_for_humans' attribute accessor
      *

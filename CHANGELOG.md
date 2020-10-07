@@ -20,3 +20,7 @@ All notable changes to `builder` will be documented in this file
 
 ## 0.2.0 - 2020-09-08
 - fix illuminate/support requirement to allow for installing laravel/framework:8.0
+
+
+## 0.3.0 - 2020-10-07
+- add support for php 7.0-7.1

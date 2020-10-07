@@ -1,6 +1,6 @@
 {
     "name": "sfneal/builders",
-    "description": "Boilerplate for PHP package repo's",
+    "description": "Eloquent\\Builder wrapper with extended functionality",
     "keywords": [
         "sfneal",
         "builder"

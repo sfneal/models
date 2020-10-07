@@ -1,4 +1,4 @@
-# Very short description of the package
+# Query Builders
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/builders.svg?style=flat-square)](https://packagist.org/packages/sfneal/builders)
 [![Build Status](https://img.shields.io/travis/sfneal/builders/master.svg?style=flat-square)](https://travis-ci.org/sfneal/builders)

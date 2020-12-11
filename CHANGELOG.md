@@ -29,5 +29,10 @@ All notable changes to `builder` will be documented in this file
 ## 0.3.1 - 2020-10-07
 - fix composer package description & readme
 
+
 ## 0.3.2 - 2020-12-04
 - optimize Travis CI config
+
+
+## 0.4.0 - 2020-12-11
+- add support for php8

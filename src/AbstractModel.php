@@ -264,4 +264,24 @@ abstract class AbstractModel extends Model
     {
         return $this->created_at->diffForHumans();
     }
+
+    /**
+     * Access the 'creation_date' attribute that returns the attribute in 'Y-m-d' format.
+     *
+     * @return string
+     */
+    public function getCreatedDateAttribute(): string
+    {
+        return date('Y-m-d', strtotime($this->created_at));
+    }
+
+    /**
+     * Access the 'updated_at' attribute that returns the attribute in 'Y-m-d' format.
+     *
+     * @return string
+     */
+    public function getUpdatedDateAttribute(): string
+    {
+        return date('Y-m-d', strtotime($this->updated_at));
+    }
 }

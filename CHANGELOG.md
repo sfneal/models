@@ -29,3 +29,7 @@ All notable changes to `models` will be documented in this file
 
 ## 0.4.0 - 2020-12-11
 - add support for php8
+
+
+## 0.4.1 - 2020-01-18
+- add 'created_date' & 'updated_date' attributes to AbstractModel

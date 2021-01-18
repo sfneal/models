@@ -1,7 +1,8 @@
 # Query Builders
 
+[![Packagist PHP support](https://img.shields.io/packagist/php-v/sfneal/builders)](https://packagist.org/packages/sfneal/builders)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/builders.svg?style=flat-square)](https://packagist.org/packages/sfneal/builders)
-[![Build Status](https://img.shields.io/travis/sfneal/builders/master.svg?style=flat-square)](https://travis-ci.org/sfneal/builders)
+[![Build Status](https://travis-ci.com/sfneal/builders.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/builders)
 [![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/builders.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/builders)
 [![Total Downloads](https://img.shields.io/packagist/dt/sfneal/builders.svg?style=flat-square)](https://packagist.org/packages/sfneal/builders)
 

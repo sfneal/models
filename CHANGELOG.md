@@ -36,3 +36,9 @@ All notable changes to `builder` will be documented in this file
 
 ## 0.4.0 - 2020-12-11
 - add support for php8
+
+
+## 0.5.0 - 2021-01-21
+- add Scrutinizer & Style CI badges to README
+- cut support for php7.0
+- fix min sfneal/string-helpers version

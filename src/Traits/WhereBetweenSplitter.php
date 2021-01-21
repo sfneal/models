@@ -3,6 +3,7 @@
 namespace Sfneal\Builders\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
+use Sfneal\Helpers\Strings\StringHelpers;
 
 trait WhereBetweenSplitter
 {
@@ -52,7 +53,7 @@ trait WhereBetweenSplitter
      */
     private static function isSplitableValue($values, string $sep = '-')
     {
-        return is_string($values) && inString($values, $sep);
+        return is_string($values) && (new StringHelpers($values))->inString($sep);
     }
 
     /**

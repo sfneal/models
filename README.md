@@ -3,7 +3,8 @@
 [![Packagist PHP support](https://img.shields.io/packagist/php-v/sfneal/builders)](https://packagist.org/packages/sfneal/builders)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/builders.svg?style=flat-square)](https://packagist.org/packages/sfneal/builders)
 [![Build Status](https://travis-ci.com/sfneal/builders.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/builders)
-[![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/builders.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/builders)
+[![StyleCI](https://github.styleci.io/repos/287379530/shield?branch=master)](https://github.styleci.io/repos/287379530?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sfneal/builders/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sfneal/builders/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/sfneal/builders.svg?style=flat-square)](https://packagist.org/packages/sfneal/builders)
 
 Eloquent\Builder wrapper with extended functionality

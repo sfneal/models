@@ -40,3 +40,7 @@ All notable changes to `models` will be documented in this file
 - add sfneal/redis-helpers to composer package requirements.
 - fix issue with use of redisDelete helper function in InvalidateModelCache trait
 - fix sfneal/builders min version syntax.
+
+
+## 0.5.1 - 2021-01-25
+- fix min sfneal/redis-helpers composer version syntax

@@ -31,5 +31,12 @@ All notable changes to `models` will be documented in this file
 - add support for php8
 
 
-## 0.4.1 - 2020-01-18
+## 0.4.1 - 2021-01-18
 - add 'created_date' & 'updated_date' attributes to AbstractModel
+
+
+## 0.5.0 - 2021-01-25
+- cut support for php7.0.
+- add sfneal/redis-helpers to composer package requirements.
+- fix issue with use of redisDelete helper function in InvalidateModelCache trait
+- fix sfneal/builders min version syntax.

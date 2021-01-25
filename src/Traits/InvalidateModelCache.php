@@ -2,6 +2,8 @@
 
 namespace Sfneal\Models\Traits;
 
+use Sfneal\Helpers\Redis\RedisCache;
+
 trait InvalidateModelCache
 {
     /**
@@ -12,6 +14,6 @@ trait InvalidateModelCache
      */
     public static function invalidateCache(string $key = null)
     {
-        return redisDelete(parent::getTableName().(isset($key) ? ":{$key}" : ''));
+        return RedisCache::delete(parent::getTableName().(isset($key) ? ":{$key}" : ''));
     }
 }

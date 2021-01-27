@@ -2,30 +2,8 @@
 
 namespace Sfneal\Models\Tests;
 
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Sfneal\Models\Tests\Models\People;
-
-class AbstractModelTest extends OrchestraTestCase
+class ModelFactoryTest extends TestCase
 {
-    /**
-     * @var Collection|Model|mixed
-     */
-    private $model;
-
-    /**
-     * Setup the test environment.
-     *
-     * @return void
-     */
-    public function setUp(): void
-    {
-        parent::setUp();
-
-        $this->model = People::factory()->make();
-    }
-
     /** @test */
     public function fillables_are_correct_types()
     {

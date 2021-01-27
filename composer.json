@@ -21,7 +21,8 @@
         "sfneal/string-helpers": ">=1.0.1"
     },
     "require-dev": {
-        "phpunit/phpunit": ">=7.0"
+        "phpunit/phpunit": ">=7.5.20",
+        "orchestra/testbench": ">=3.8.0"
     },
     "autoload": {
         "psr-4": {

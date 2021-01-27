@@ -51,3 +51,5 @@ All notable changes to `models` will be documented in this file
 - make People model & PeopleFactory for testing AbstractModel functionality
 - add improved test suite
 - fix issues with hasAttribute method incorrectly determining attributes are missing
+- cut support for php7.2 & below
+- bump min laravel/framework version

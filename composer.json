@@ -19,8 +19,8 @@
         "php": ">=7.3",
         "laravel/framework": ">=8.2",
         "sfneal/builders": ">=0.3",
-        "sfneal/laravel-helpers": ">=0.5.0",
-        "sfneal/redis-helpers": ">=1.0.0"
+        "sfneal/laravel-helpers": ">=1.0",
+        "sfneal/redis-helpers": ">=1.0"
     },
     "require-dev": {
         "laravel/legacy-factories": ">=1.1.0",

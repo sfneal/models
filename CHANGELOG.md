@@ -42,3 +42,8 @@ All notable changes to `builder` will be documented in this file
 - add Scrutinizer & Style CI badges to README
 - cut support for php7.0
 - fix min sfneal/string-helpers version
+
+
+## 0.6.0 - 2021-01-27
+- add test suite from sfneal/models
+- bump illuminate/datebase min version to 8.2 to support model test factories

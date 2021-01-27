@@ -2,8 +2,10 @@
 
 namespace Sfneal\Builders\Tests\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Sfneal\Builders\QueryBuilder;
 use Sfneal\Builders\Tests\Factories\PeopleFactory;
 
 class People extends Model
@@ -25,9 +27,35 @@ class People extends Model
         'zip',
     ];
 
+    /**
+     * Model Factory
+     *
+     * @return PeopleFactory
+     */
     protected static function newFactory(): PeopleFactory
     {
         return new PeopleFactory();
+    }
+
+    /**
+     * Query Builder.
+     *
+     * @param $query
+     * @return QueryBuilder
+     */
+    public function newEloquentBuilder($query)
+    {
+        return new QueryBuilder($query);
+    }
+
+    /**
+     * Query Builder method for improved type hinting.
+     *
+     * @return QueryBuilder|Builder
+     */
+    public static function query()
+    {
+        return parent::query();
     }
 
     public function getNameFullAttribute(): string

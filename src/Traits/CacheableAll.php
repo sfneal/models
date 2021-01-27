@@ -17,6 +17,7 @@ trait CacheableAll
      */
     public static function all($columns = ['*'])
     {
+        // todo: fix use of serializeHash() function
         return Cache::rememberForever(parent::getTableName().':all#'.serializeHash($columns),
             function () use ($columns) {
                 return parent::all($columns);

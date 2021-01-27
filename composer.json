@@ -19,7 +19,7 @@
         "php": ">=7.3",
         "laravel/framework": ">=8.0",
         "sfneal/builders": ">=0.3",
-        "sfneal/redis-helpers": ">=0.7.0"
+        "sfneal/redis-helpers": ">=1.0.0"
     },
     "require-dev": {
         "laravel/legacy-factories": ">=1.1.0",

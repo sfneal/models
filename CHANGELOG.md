@@ -53,3 +53,4 @@ All notable changes to `models` will be documented in this file
 - fix issues with hasAttribute method incorrectly determining attributes are missing
 - cut support for php7.2 & below
 - bump min laravel/framework version
+- bump min sfneal/redis-helpers to initial production release (1.0) 

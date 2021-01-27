@@ -47,4 +47,12 @@ class AbstractModelTest extends TestCase
         $this->assertIsString($primaryKey);
         $this->assertTrue($primaryKey == 'person_id');
     }
+
+    /** @test */
+    public function getUploadDirectory()
+    {
+        $uploadDirectory = $this->model->getUploadDirectory();
+        $this->assertIsString($uploadDirectory);
+        $this->assertTrue($uploadDirectory == "files/{$this->model->getTableName()}/{$this->model->getKey()}");
+    }
 }

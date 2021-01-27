@@ -23,6 +23,7 @@ class PeopleFactory extends Factory
     public function definition(): array
     {
         return [
+            'person_id' => $this->faker->uuid,
             'name_first' => $this->faker->firstName,
             'name_last' => $this->faker->lastName,
             'email' => $this->faker->safeEmail,

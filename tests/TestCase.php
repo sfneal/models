@@ -2,15 +2,13 @@
 
 namespace Sfneal\Models\Tests;
 
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sfneal\Models\Tests\Models\People;
 
 class TestCase extends OrchestraTestCase
 {
     /**
-     * @var Collection|Model|mixed
+     * @var People
      */
     public $model;
 

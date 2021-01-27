@@ -2,9 +2,7 @@
 
 namespace Sfneal\Builders\Tests;
 
-use PHPUnit\Framework\TestCase;
-
-class ExampleTest extends TestCase
+class QueryBuilderTest extends TestCase
 {
     /** @test */
     public function true_is_true()

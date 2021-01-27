@@ -44,3 +44,10 @@ All notable changes to `models` will be documented in this file
 
 ## 0.5.1 - 2021-01-25
 - fix min sfneal/redis-helpers composer version syntax
+
+
+## 0.6.0 - 2021-01-27
+- add orchestra/testbench to composer dev requirements
+- make People model & PeopleFactory for testing AbstractModel functionality
+- add improved test suite
+- fix issues with hasAttribute method incorrectly determining attributes are missing

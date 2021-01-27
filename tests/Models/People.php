@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models\Tests\Models;
-
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Sfneal\Models\AbstractModel;

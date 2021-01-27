@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sfneal\Models\Tests\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;

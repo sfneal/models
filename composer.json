@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=7.3",
-        "laravel/framework": ">=8.0",
+        "laravel/framework": ">=8.2",
         "sfneal/builders": ">=0.3",
         "sfneal/redis-helpers": ">=1.0.0"
     },

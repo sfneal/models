@@ -104,8 +104,8 @@ abstract class AbstractModel extends Model
         // Determine that the attribute exists and optionally weather it is fillable
         return
             isset($attr) &&
-            array_key_exists($attr, $this->attributes) &&
-            ($is_fillable ? array_key_exists($attr, $this->fillable) : true);
+            (bool) $this->$attr &&
+            ($is_fillable ? (array_key_exists($attr, $this->fillable) || in_array($attr, $this->fillable)) : true);
     }
 
     /**

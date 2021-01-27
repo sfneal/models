@@ -2,15 +2,16 @@
 
 namespace Sfneal\Builders\Tests;
 
+use Illuminate\Database\Eloquent\Collection;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sfneal\Builders\Tests\Models\People;
 
 class TestCase extends OrchestraTestCase
 {
     /**
-     * @var People
+     * @var Collection
      */
-    public $model;
+    public $models;
 
     /**
      * Setup the test environment.
@@ -21,6 +22,6 @@ class TestCase extends OrchestraTestCase
     {
         parent::setUp();
 
-        $this->model = People::factory()->make();
+        $this->models = People::factory()->count(20)->make();
     }
 }

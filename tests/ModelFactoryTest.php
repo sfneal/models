@@ -2,8 +2,26 @@
 
 namespace Sfneal\Builders\Tests;
 
+use Sfneal\Builders\Tests\Models\People;
+
 class ModelFactoryTest extends TestCase
 {
+    /**
+     * @var People
+     */
+    public $model;
+
+    /**
+     * Setup the test environment.
+     *
+     * @return void
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->model = $this->models->random();
+    }
+
     /** @test */
     public function fillables_are_correct_types()
     {

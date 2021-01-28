@@ -7,8 +7,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sfneal/builders/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sfneal/builders/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/sfneal/builders.svg?style=flat-square)](https://packagist.org/packages/sfneal/builders)
 
-Eloquent\Builder wrapper with extended functionality
-
+Eloquent\Builder wrapper with extended functionality.
 
 
 ## Installation
@@ -21,17 +20,44 @@ composer require sfneal/builders
 
 ## Usage
 
+Add the custom QueryBuilder to any Eloquent model by overwriting the built-in newEloquentBuilder() & query() methods.
+
 ``` php
-// Usage description here
+use Illuminate\Database\Eloquent\Builder;
+use Sfneal\Builders\QueryBuilder;
+
+class ExampleModel extends Model
+{
+    /**
+     * Query Builder.
+     *
+     * @param $query
+     * @return QueryBuilder
+     */
+    public function newEloquentBuilder($query)
+    {
+        return new QueryBuilder($query);
+    }
+    
+    /**
+     * Query Builder method for improved type hinting.
+     *
+     * @return QueryBuilder|Builder
+     */
+    public static function query()
+    {
+        return parent::query();
+    }
+}
 ```
 
-### Testing
+## Testing
 
 ``` bash
 composer test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
@@ -39,7 +65,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
+## Security
 
 If you discover any security related issues, please email stephen.neal14@gmail.com instead of using the issue tracker.
 

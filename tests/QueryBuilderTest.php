@@ -55,4 +55,15 @@ class QueryBuilderTest extends TestCase
 
         $this->assertSame($results['total_count'], 22);
     }
+
+    /** @test */
+    public function orderByCreatedAt()
+    {
+        $output = People::query()->orderByCreatedAt('desc')->get()->toArray();
+        $expected = People::query()->orderBy('created_at', 'desc')->get()->toArray();
+
+        $this->assertIsArray($output);
+        $this->assertIsArray($expected);
+        $this->assertSame($output, $expected);
+    }
 }

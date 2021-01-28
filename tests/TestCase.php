@@ -22,6 +22,24 @@ class TestCase extends OrchestraTestCase
     {
         parent::setUp();
 
-        $this->models = People::factory()->count(20)->make();
+        $this->models = People::factory()
+            ->count(20)
+            ->make()
+            ->add($this->addCustomFactories());
+    }
+
+    /**
+     * Add custom Factories to the model Collection
+     *
+     * @return array
+     */
+    private function addCustomFactories(): array
+    {
+        return [
+            People::factory()->make([
+                'name_first' => 'Stephen',
+                'name_last' => 'Neal',
+            ])
+        ];
     }
 }

@@ -5,6 +5,7 @@ namespace Sfneal\Builders\Tests;
 use Illuminate\Database\Eloquent\Collection;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sfneal\Builders\Tests\Models\People;
+use Sfneal\Builders\Tests\Providers\BuildersTestingServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
@@ -12,6 +13,18 @@ class TestCase extends OrchestraTestCase
      * @var People|Collection
      */
     public $models;
+
+    protected function getPackageProviders($app)
+    {
+        return BuildersTestingServiceProvider::class;
+    }
+
+    protected function getEnvironmentSetUp($app)
+    {
+        include_once __DIR__.'/migrations/create_people_table.php.stub';
+
+        (new \CreatePeopleTable())->up();
+    }
 
     /**
      * Setup the test environment.

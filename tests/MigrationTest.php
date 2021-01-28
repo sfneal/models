@@ -5,22 +5,9 @@ namespace Sfneal\Builders\Tests;
 
 
 use Sfneal\Builders\Tests\Models\People;
-use Sfneal\Builders\Tests\Providers\BuildersTestingServiceProvider;
 
 class MigrationTest extends TestCase
 {
-    protected function getPackageProviders($app)
-    {
-        return BuildersTestingServiceProvider::class;
-    }
-
-    protected function getEnvironmentSetUp($app)
-    {
-        include_once __DIR__.'/migrations/create_people_table.php.stub';
-
-        (new \CreatePeopleTable())->up();
-    }
-
     /** @test */
     public function it_can_access_the_database()
     {

@@ -28,7 +28,7 @@ class People extends Model
     ];
 
     /**
-     * Model Factory
+     * Model Factory.
      *
      * @return PeopleFactory
      */

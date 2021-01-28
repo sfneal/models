@@ -58,6 +58,10 @@ All notable changes to `models` will be documented in this file
 
 
 ## 1.0.0 - 2021-01-28
-- initial production release
 - bump min sfneal/builders version to 1.0
 - bump min orchestra/testbench version to 6.7 to avoid mocker/mockery issues
+- initial production release
+
+
+## 1.0.1 - 2021-01-28
+- cut laravel/framework dep as its satisfied by sfneal/builders requirement of illuminate/database 

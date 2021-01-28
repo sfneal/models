@@ -55,3 +55,9 @@ All notable changes to `models` will be documented in this file
 - bump min laravel/framework version to support non-conventional Factory namespace
 - bump min sfneal/redis-helpers to initial production release (1.0)
 - add sfneal/laravel-helpers to composer requirements
+
+
+## 1.0.0 - 2021-01-28
+- initial production release
+- bump min sfneal/builders version to 1.0
+- bump min orchestra/testbench version to 6.7 to avoid mocker/mockery issues

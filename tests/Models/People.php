@@ -72,4 +72,9 @@ class People extends Model
     {
         return "{$this->address}, {$this->city}, {$this->state} {$this->zip}";
     }
+
+    public function getAgeAttribute($value): int
+    {
+        return intval($value);
+    }
 }

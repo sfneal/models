@@ -22,10 +22,13 @@ class TestCase extends OrchestraTestCase
     {
         parent::setUp();
 
+        // Create model factories
         $this->models = People::factory()
             ->count(20)
-            ->make()
-            ->add($this->addCustomFactories());
+            ->make();
+
+        // Add custom factories
+        $this->addCustomFactories();
     }
 
     /**
@@ -33,7 +36,7 @@ class TestCase extends OrchestraTestCase
      *
      * @return array
      */
-    private function addCustomFactories(): array
+    private static function customFactories(): array
     {
         return [
             People::factory()->make([
@@ -45,5 +48,17 @@ class TestCase extends OrchestraTestCase
                 'name_last' => 'Neal',
             ])
         ];
+    }
+
+    /**
+     * Add custom factories to the Model Collection
+     *
+     * @return void
+     */
+    private function addCustomFactories(): void
+    {
+        foreach (self::customFactories() as $factory) {
+            $this->models->add($factory);
+        }
     }
 }

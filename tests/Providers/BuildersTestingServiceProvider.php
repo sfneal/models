@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Builders\Tests\Providers;
-
 
 use Illuminate\Support\ServiceProvider;
 

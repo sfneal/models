@@ -48,7 +48,7 @@ class TestCase extends OrchestraTestCase
     }
 
     /**
-     * Add custom Factories to the model Collection
+     * Add custom Factories to the model Collection.
      *
      * @return array
      */
@@ -62,12 +62,12 @@ class TestCase extends OrchestraTestCase
             People::factory()->create([
                 'name_first' => 'Richard',
                 'name_last' => 'Neal',
-            ])
+            ]),
         ];
     }
 
     /**
-     * Add custom factories to the Model Collection
+     * Add custom factories to the Model Collection.
      *
      * @return void
      */

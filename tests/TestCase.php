@@ -3,12 +3,15 @@
 namespace Sfneal\Builders\Tests;
 
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sfneal\Builders\Tests\Models\People;
 use Sfneal\Builders\Tests\Providers\BuildersTestingServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
+    use RefreshDatabase;
+
     /**
      * @var People|Collection
      */
@@ -38,7 +41,7 @@ class TestCase extends OrchestraTestCase
         // Create model factories
         $this->models = People::factory()
             ->count(20)
-            ->make();
+            ->create();
 
         // Add custom factories
         $this->addCustomFactories();
@@ -52,11 +55,11 @@ class TestCase extends OrchestraTestCase
     private static function customFactories(): array
     {
         return [
-            People::factory()->make([
+            People::factory()->create([
                 'name_first' => 'Stephen',
                 'name_last' => 'Neal',
             ]),
-            People::factory()->make([
+            People::factory()->create([
                 'name_first' => 'Richard',
                 'name_last' => 'Neal',
             ])

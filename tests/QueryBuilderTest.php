@@ -32,4 +32,27 @@ class QueryBuilderTest extends TestCase
 
         $this->whereLikeAssertions($query);
     }
+
+    /** @test */
+    public function getFlatArray()
+    {
+        $query = People::query();
+        $array = $query->getFlatArray('city');
+
+        $this->assertIsArray($array);
+        foreach ($array as $item) {
+            $this->assertIsString($item);
+        }
+        $this->assertSame($query->count('city'), count($array));
+    }
+
+    /** @test */
+    public function selectRawJson()
+    {
+        $results = People::query()
+            ->selectRawJson('people.person_id as id, people.name_last as text')
+            ->countAndPaginate();
+
+        $this->assertSame($results['total_count'], 22);
+    }
 }

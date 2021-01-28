@@ -9,7 +9,7 @@ use Sfneal\Builders\Tests\Models\People;
 class TestCase extends OrchestraTestCase
 {
     /**
-     * @var Collection
+     * @var People|Collection
      */
     public $models;
 
@@ -38,6 +38,10 @@ class TestCase extends OrchestraTestCase
         return [
             People::factory()->make([
                 'name_first' => 'Stephen',
+                'name_last' => 'Neal',
+            ]),
+            People::factory()->make([
+                'name_first' => 'Richard',
                 'name_last' => 'Neal',
             ])
         ];

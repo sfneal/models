@@ -8,7 +8,7 @@ use Sfneal\Builders\Tests\Models\People;
 
 class QueryBuilderTest extends TestCase
 {
-    private function whereLikeAssertions (QueryBuilder $query)
+    private function whereLikeAssertions(QueryBuilder $query)
     {
         $this->assertTrue($query instanceof QueryBuilder);
         $this->assertSame($query->count(), 2);

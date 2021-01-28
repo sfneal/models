@@ -4,7 +4,7 @@ namespace Sfneal\Builders\Tests\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class BuildersTestingServiceProvider extends ServiceProvider
+class TestingServiceProvider extends ServiceProvider
 {
     public function boot()
     {

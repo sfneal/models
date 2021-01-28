@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sfneal\Builders\Tests\Models\People;
-use Sfneal\Builders\Tests\Providers\BuildersTestingServiceProvider;
+use Sfneal\Builders\Tests\Providers\TestingServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
@@ -19,7 +19,7 @@ class TestCase extends OrchestraTestCase
 
     protected function getPackageProviders($app)
     {
-        return BuildersTestingServiceProvider::class;
+        return TestingServiceProvider::class;
     }
 
     protected function getEnvironmentSetUp($app)

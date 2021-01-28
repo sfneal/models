@@ -2,6 +2,7 @@
 
 namespace Sfneal\Builders\Tests;
 
+use Exception;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Builders\Tests\Models\People;
 
@@ -65,5 +66,29 @@ class QueryBuilderTest extends TestCase
         $this->assertIsArray($output);
         $this->assertIsArray($expected);
         $this->assertSame($output, $expected);
+    }
+
+    /**
+     * @test
+     * @throws Exception
+     */
+    public function getNextModel()
+    {
+        $model = People::query()->find(random_int(1, 22));
+        $nextModel = $model->getNextModel();
+
+        $this->assertSame($nextModel->person_id - 1, $model->person_id);
+    }
+
+    /**
+     * @test
+     * @throws Exception
+     */
+    public function getPreviousModel()
+    {
+        $model = People::query()->find(random_int(1, 22));
+        $nextModel = $model->getPreviousModel();
+
+        $this->assertSame($nextModel->person_id + 1, $model->person_id);
     }
 }

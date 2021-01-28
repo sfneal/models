@@ -45,5 +45,9 @@ All notable changes to `builder` will be documented in this file
 
 
 ## 0.6.0 - 2021-01-27
-- add test suite from sfneal/models
 - bump illuminate/datebase min version to 8.2 to support model test factories
+- add test suite from sfneal/models
+
+
+## 0.7.0 - 2021-01-27
+- cut support for php 7.1 & 7.2

@@ -97,6 +97,7 @@ class QueryBuilder extends EloquentBuilder
      */
     public function whereLike(string $column, $value)
     {
+        // todo: add params for front & back wildcards
         $this->where($column, 'LIKE', '%'.$value.'%');
 
         return $this;
@@ -111,6 +112,7 @@ class QueryBuilder extends EloquentBuilder
      */
     public function orWhereLike(string $column, $value)
     {
+        // todo: add params for front & back wildcards
         $this->orWhere($column, 'LIKE', '%'.$value.'%');
 
         return $this;

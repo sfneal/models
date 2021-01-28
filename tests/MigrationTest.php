@@ -7,7 +7,7 @@ namespace Sfneal\Builders\Tests;
 use Sfneal\Builders\Tests\Models\People;
 use Sfneal\Builders\Tests\Providers\BuildersTestingServiceProvider;
 
-class LaravelTest extends TestCase
+class MigrationTest extends TestCase
 {
     protected function getPackageProviders($app)
     {

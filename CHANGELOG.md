@@ -54,7 +54,12 @@ All notable changes to `builder` will be documented in this file
 
 
 ## 1.0.0 - 2021-01-28
-- initial production release
 - add test suite with migration, factory, model & service provider
 - add use of testing database persistence in TestCase for testing query builder functionality
 - bump min orchestra/testbench version to 6.7 to avoid mocker/mockery issues
+- initial production release
+
+
+## 1.0.1 - 2021-01-29
+- add $leadingWildcard & $trailingWildcard params to whereLike & orWhereLike methods
+- add assertions to QueryBuilderWhereLikeTest::whereLike() method

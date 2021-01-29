@@ -93,12 +93,17 @@ class QueryBuilder extends EloquentBuilder
      *
      * @param string $column
      * @param $value
+     * @param bool $leadingWildcard
+     * @param bool $trailingWildcard
      * @return $this
      */
-    public function whereLike(string $column, $value)
+    public function whereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard =  true)
     {
-        // todo: add params for front & back wildcards
-        $this->where($column, 'LIKE', '%'.$value.'%');
+        $this->where(
+            $column,
+            'LIKE',
+            ($leadingWildcard ? '%' : '') . $value . ($trailingWildcard ? '%' : '')
+        );
 
         return $this;
     }
@@ -108,12 +113,17 @@ class QueryBuilder extends EloquentBuilder
      *
      * @param string $column
      * @param $value
+     * @param bool $leadingWildcard
+     * @param bool $trailingWildcard
      * @return $this
      */
-    public function orWhereLike(string $column, $value)
+    public function orWhereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard =  true)
     {
-        // todo: add params for front & back wildcards
-        $this->orWhere($column, 'LIKE', '%'.$value.'%');
+        $this->orWhere(
+            $column,
+            'LIKE',
+            ($leadingWildcard ? '%' : '') . $value . ($trailingWildcard ? '%' : '')
+        );
 
         return $this;
     }

@@ -58,7 +58,7 @@ class TestCase extends OrchestraTestCase
             People::factory()->create([
                 'name_first' => 'Stephen',
                 'name_last' => 'Neal',
-                'address' => '43 Indian Lane',
+                'address' => '72 Ice House Lane',
                 'city' => 'Franklin',
                 'state' => 'MA',
                 'zip' => '02038',
@@ -66,11 +66,11 @@ class TestCase extends OrchestraTestCase
             People::factory()->create([
                 'name_first' => 'Richard',
                 'name_last' => 'Neal',
-                'address' => '43 Indian Lane',
+                'address' => '75 Ice House Lane',
                 'city' => 'Franklin',
                 'state' => 'MA',
                 'zip' => '02038',
-            ]),
+            ])
         ];
     }
 

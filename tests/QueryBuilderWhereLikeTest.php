@@ -18,18 +18,26 @@ class QueryBuilderWhereLikeTest extends TestCase
     /** @test */
     public function whereLike()
     {
+        // Basic usage
         $query = People::query()->whereLike('name_last', 'Neal');
-
         $this->whereLikeAssertions($query);
+
+        // Leading wildcard usage
+        $query2 = People::query()->whereLike('address', 'Ice House Lane', true, false);
+        $this->whereLikeAssertions($query2);
+
+        // Trailing wildcard usage
+        $query3 = People::query()->whereLike('city', 'Frank', false, true);
+        $this->whereLikeAssertions($query3);
     }
 
     /** @test */
     public function orWhereLike()
     {
+        // Basic usage
         $query = People::query()
             ->orWhereLike('name_first', 'Stephen')
             ->orWhereLike('name_first', 'Richard');
-
         $this->whereLikeAssertions($query);
     }
 }

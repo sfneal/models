@@ -70,7 +70,7 @@ class TestCase extends OrchestraTestCase
                 'city' => 'Franklin',
                 'state' => 'MA',
                 'zip' => '02038',
-            ])
+            ]),
         ];
     }
 

@@ -9,12 +9,12 @@ interface WherePublic
      *
      * @return $this
      */
-    public function wherePublic();
+    public function wherePublic(): self;
 
     /**
      * Scope query results to only results that are private.
      *
      * @return $this
      */
-    public function wherePrivate();
+    public function wherePrivate(): self;
 }

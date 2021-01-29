@@ -10,9 +10,9 @@ trait WherePublicStatus
      * @param int $value
      * @return $this
      */
-    public function wherePublic($value = 1)
+    public function wherePublic($value = 1): self
     {
-        $this->where('public_status', '=', 1);
+        $this->where('public_status', '=', $value);
 
         return $this;
     }
@@ -22,7 +22,7 @@ trait WherePublicStatus
      *
      * @return $this
      */
-    public function wherePrivate()
+    public function wherePrivate(): self
     {
         $this->wherePublic(0);
 

@@ -51,7 +51,7 @@ trait WhereBetweenSplitter
      * @param string $sep
      * @return bool
      */
-    private static function isSplitableValue($values, string $sep = '-')
+    private static function isSplitableValue($values, string $sep = '-'): bool
     {
         return is_string($values) && (new StringHelpers($values))->inString($sep);
     }
@@ -62,7 +62,7 @@ trait WhereBetweenSplitter
      * @param $values
      * @return bool
      */
-    private static function isArrayValue($values)
+    private static function isArrayValue($values): bool
     {
         return is_array($values) && count($values) > 1;
     }

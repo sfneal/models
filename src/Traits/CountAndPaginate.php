@@ -10,7 +10,7 @@ trait CountAndPaginate
      * @param int $per_page
      * @return array
      */
-    public function countAndPaginate($per_page = 30)
+    public function countAndPaginate($per_page = 30): array
     {
         return [
             'total_count' => $this->count(),

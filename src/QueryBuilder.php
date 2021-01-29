@@ -97,7 +97,7 @@ class QueryBuilder extends EloquentBuilder
      * @param bool $trailingWildcard
      * @return $this
      */
-    public function whereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard =  true)
+    public function whereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard =  true): self
     {
         $this->where(
             $column,
@@ -117,7 +117,7 @@ class QueryBuilder extends EloquentBuilder
      * @param bool $trailingWildcard
      * @return $this
      */
-    public function orWhereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard =  true)
+    public function orWhereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard =  true): self
     {
         $this->orWhere(
             $column,
@@ -134,7 +134,7 @@ class QueryBuilder extends EloquentBuilder
      * @param string $column
      * @return array
      */
-    public function getFlatArray(string $column)
+    public function getFlatArray(string $column): array
     {
         return array_map(function ($collection) use ($column) {
             return $collection[$column];
@@ -147,7 +147,7 @@ class QueryBuilder extends EloquentBuilder
      * @param string|null $raw
      * @return $this
      */
-    public function selectRawJson(string $raw = null)
+    public function selectRawJson(string $raw = null): self
     {
         $this->withoutGlobalScopes();
         $this->selectRaw($raw ?? $this->selectRawJson);
@@ -161,7 +161,7 @@ class QueryBuilder extends EloquentBuilder
      * @param string $direction
      * @return $this
      */
-    public function orderByCreatedAt(string $direction = 'desc')
+    public function orderByCreatedAt(string $direction = 'desc'): self
     {
         $this->orderBy('created_at', $direction);
 

@@ -74,7 +74,12 @@ class QueryBuilderTest extends TestCase
      */
     public function getNextModel()
     {
-        $model = People::query()->find(random_int(1, 22));
+        // Prevent randomly selecting the last item which has no 'next' model
+        $id = random_int(
+            People::query()->first()->getKey(),
+            People::query()->orderBy('person_id', 'desc')->first()->getKey() - 1
+        );
+        $model = People::query()->find($id);
         $nextModel = $model->getNextModel();
 
         $this->assertSame($nextModel->person_id - 1, $model->person_id);
@@ -86,7 +91,12 @@ class QueryBuilderTest extends TestCase
      */
     public function getPreviousModel()
     {
-        $model = People::query()->find(random_int(1, 22));
+        // Prevent randomly selecting the first model that doesn't have a 'previous' model
+        $id = random_int(
+            People::query()->first()->getKey() + 1,
+            People::query()->orderBy('person_id', 'desc')->first()->getKey()
+        );
+        $model = People::query()->find($id);
         $nextModel = $model->getPreviousModel();
 
         $this->assertSame($nextModel->person_id + 1, $model->person_id);

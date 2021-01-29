@@ -61,5 +61,9 @@ All notable changes to `builder` will be documented in this file
 
 
 ## 1.0.1 - 2021-01-29
-- add $leadingWildcard & $trailingWildcard params to whereLike & orWhereLike methods
 - add assertions to QueryBuilderWhereLikeTest::whereLike() method
+- add $leadingWildcard & $trailingWildcard params to whereLike & orWhereLike methods
+
+
+## 1.0.2 - 2021-01-29
+- fix wherePublic method (in trait & interface) type hinting

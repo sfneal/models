@@ -10,7 +10,7 @@ trait WherePublicStatus
      * @param int $value
      * @return $this
      */
-    public function wherePublic($value = 1): self
+    public function wherePublic(int $value = 1): self
     {
         $this->where('public_status', '=', $value);
 

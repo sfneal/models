@@ -63,5 +63,9 @@ All notable changes to `models` will be documented in this file
 - initial production release
 
 
+## 1.0.1 - 2021-02-29
+- cut laravel/framework dep as its satisfied by sfneal/builders requirement of illuminate/database
+
+
 ## 1.1.0 - 2021-02-02
 - bump min sfneal/redis-helpers version

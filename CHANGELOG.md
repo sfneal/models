@@ -69,3 +69,7 @@ All notable changes to `models` will be documented in this file
 
 ## 1.1.0 - 2021-02-02
 - bump min sfneal/redis-helpers version
+
+
+## 1.2.0 - 2021-03-10
+- add `getCreatedTimeAttribute()` & `getUpdatedTimeAttribute()` methods to AbstractModel for accessing `created_time` & `update_time` attributes

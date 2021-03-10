@@ -19,7 +19,7 @@ abstract class AbstractModel extends Model
      *
      * @return string
      */
-    protected $timestampFormat = 'm/d/Y h:i a';
+    protected $timestampFormat = 'Y-m-d h:i a';
 
     /**
      * Query Builder.

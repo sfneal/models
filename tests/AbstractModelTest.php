@@ -4,6 +4,8 @@ namespace Sfneal\Models\Tests;
 
 class AbstractModelTest extends TestCase
 {
+    // todo: improve test methods
+
     /** @test */
     public function hasAttribute()
     {

@@ -73,3 +73,7 @@ All notable changes to `models` will be documented in this file
 
 ## 1.2.0 - 2021-03-10
 - add `getCreatedTimeAttribute()` & `getUpdatedTimeAttribute()` methods to AbstractModel for accessing `created_time` & `update_time` attributes
+
+
+## 1.2.1 - 2021-03-10
+- fix AbstractModel's $timestampFormat property to use 'Y-m-d' instead of date format instead of 'm/d/Y' 

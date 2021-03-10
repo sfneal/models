@@ -276,12 +276,32 @@ abstract class AbstractModel extends Model
     }
 
     /**
-     * Access the 'updated_at' attribute that returns the attribute in 'Y-m-d' format.
+     * Access the 'creation_time' attribute that returns the attribute in 'h:i A' format.
+     *
+     * @return string
+     */
+    public function getCreatedTimeAttribute(): string
+    {
+        return date('h:i A', strtotime($this->created_at));
+    }
+
+    /**
+     * Access the 'updated_date' attribute that returns the attribute in 'Y-m-d' format.
      *
      * @return string
      */
     public function getUpdatedDateAttribute(): string
     {
         return date('Y-m-d', strtotime($this->updated_at));
+    }
+
+    /**
+     * Access the 'updated_time' attribute that returns the attribute in 'h:i A' format.
+     *
+     * @return string
+     */
+    public function getUpdatedTimeAttribute(): string
+    {
+        return date('h:i A', strtotime($this->updated_at));
     }
 }

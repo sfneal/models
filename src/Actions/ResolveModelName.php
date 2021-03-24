@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models\Actions;
-
 
 use Sfneal\Actions\AbstractAction;
 use Sfneal\Helpers\Laravel\LaravelHelpers;

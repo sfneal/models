@@ -6,6 +6,7 @@ namespace Sfneal\Models\Actions;
 
 use Sfneal\Actions\AbstractAction;
 use Sfneal\Helpers\Laravel\LaravelHelpers;
+use Sfneal\Helpers\Strings\StringHelpers;
 use Sfneal\Models\AbstractModel;
 
 class ResolveModelName extends AbstractAction
@@ -40,18 +41,7 @@ class ResolveModelName extends AbstractAction
     public function execute()
     {
         // Split string on upper case characters
-        return implode(' ', $this->camelCaseSplit($this->getClassName()));
-    }
-
-    /**
-     * Explode a string using upper case chars as the separator.
-     *
-     * @param string $string
-     * @return array
-     */
-    private function camelCaseSplit(string $string): array
-    {
-        return preg_split('/(?=[A-Z])/', $string, -1, PREG_SPLIT_NO_EMPTY);
+        return implode(' ', (new StringHelpers($this->getClassName()))->camelCaseSplit());
     }
 
     /**

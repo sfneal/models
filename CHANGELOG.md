@@ -76,4 +76,9 @@ All notable changes to `models` will be documented in this file
 
 
 ## 1.2.1 - 2021-03-10
-- fix AbstractModel's $timestampFormat property to use 'Y-m-d' instead of date format instead of 'm/d/Y' 
+- fix AbstractModel's $timestampFormat property to use 'Y-m-d' instead of date format instead of 'm/d/Y'
+
+
+## 1.3.0 - 2021-03-24
+- make `ResolveModelName` action with tests for retrieving a model's name for use in logging 
+- add composer requiring of sfneal/string-helpers (min version 1.1.4) to support use of `camelCaseSplit()` method

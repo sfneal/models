@@ -10,7 +10,7 @@ class TestCase extends OrchestraTestCase
     /**
      * @var People
      */
-    public $peopleModel;
+    public $model;
 
     /**
      * Setup the test environment.
@@ -21,6 +21,6 @@ class TestCase extends OrchestraTestCase
     {
         parent::setUp();
 
-        $this->peopleModel = People::factory()->make();
+        $this->model = People::factory()->make();
     }
 }

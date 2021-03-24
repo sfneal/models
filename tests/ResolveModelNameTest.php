@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models\Tests;
-
 
 use Sfneal\Models\Actions\ResolveModelName;
 use Sfneal\Models\Tests\Models\CompanyPeople;

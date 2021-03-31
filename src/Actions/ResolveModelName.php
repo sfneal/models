@@ -2,12 +2,12 @@
 
 namespace Sfneal\Models\Actions;
 
-use Sfneal\Actions\AbstractAction;
+use Sfneal\Actions\Action;
 use Sfneal\Helpers\Laravel\LaravelHelpers;
 use Sfneal\Helpers\Strings\StringHelpers;
 use Sfneal\Models\AbstractModel;
 
-class ResolveModelName extends AbstractAction
+class ResolveModelName extends Action
 {
     /**
      * @var AbstractModel

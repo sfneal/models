@@ -82,3 +82,8 @@ All notable changes to `models` will be documented in this file
 ## 1.3.0 - 2021-03-24
 - make `ResolveModelName` action with tests for retrieving a model's name for use in logging 
 - add composer requiring of sfneal/string-helpers (min version 1.1.4) to support use of `camelCaseSplit()` method
+
+
+## 1.4.0 - 2021-03-31
+- add sfneal/actions (^2.0) to composer requirements
+- refactor `AbstractAction` extension to `Action`

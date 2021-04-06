@@ -3,10 +3,10 @@
 namespace Sfneal\Models\Tests\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Sfneal\Models\AbstractModel;
+use Sfneal\Models\Model;
 use Sfneal\Models\Tests\Factories\CompanyPeopleFactory;
 
-class CompanyPeople extends AbstractModel
+class CompanyPeople extends Model
 {
     use HasFactory;
 

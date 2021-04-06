@@ -87,3 +87,7 @@ All notable changes to `models` will be documented in this file
 ## 1.4.0 - 2021-03-31
 - add sfneal/actions (^2.0) to composer requirements
 - refactor `AbstractAction` extension to `Action`
+
+
+## 2.0.0 - 2021-04-06
+- cut 'Abstract' prefix from class names

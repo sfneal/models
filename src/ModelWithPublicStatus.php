@@ -6,7 +6,7 @@ use Sfneal\Models\Interfaces\IsPublicInterface;
 use Sfneal\Models\Interfaces\UpdatePublicStatusInterface;
 use Sfneal\Models\Traits\PublicStatusTrait;
 
-abstract class AbstractModelWithPublicStatus extends AbstractModel implements IsPublicInterface, UpdatePublicStatusInterface
+abstract class ModelWithPublicStatus extends Model implements IsPublicInterface, UpdatePublicStatusInterface
 {
     use PublicStatusTrait;
 }

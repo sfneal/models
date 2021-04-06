@@ -4,12 +4,12 @@ namespace Sfneal\Models;
 
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Traits\UploadDirectory;
 
-abstract class AbstractModel extends Model
+abstract class Model extends EloquentModel
 {
     use SoftDeletes,
         UploadDirectory;

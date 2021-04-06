@@ -5,12 +5,12 @@ namespace Sfneal\Models\Actions;
 use Sfneal\Actions\Action;
 use Sfneal\Helpers\Laravel\LaravelHelpers;
 use Sfneal\Helpers\Strings\StringHelpers;
-use Sfneal\Models\AbstractModel;
+use Sfneal\Models\Model;
 
 class ResolveModelName extends Action
 {
     /**
-     * @var AbstractModel
+     * @var Model
      */
     private $model;
 
@@ -22,10 +22,10 @@ class ResolveModelName extends Action
     /**
      * ResolveModelName constructor.
      *
-     * @param AbstractModel $model
+     * @param Model $model
      * @param bool $short
      */
-    public function __construct(AbstractModel $model, bool $short = true)
+    public function __construct(Model $model, bool $short = true)
     {
         $this->model = $model;
         $this->short = $short;

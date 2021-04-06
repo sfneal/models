@@ -4,7 +4,7 @@ namespace Sfneal\Models;
 
 use Illuminate\Database\Eloquent\Relations\Concerns\AsPivot;
 
-abstract class AbstractPivot extends AbstractModel
+abstract class Pivot extends Model
 {
     use AsPivot;
 

@@ -95,3 +95,7 @@ All notable changes to `models` will be documented in this file
 
 ## 2.0.1 - 2021-04-07
 - fix issue with import of `Illuminate\Auth\Authenticatable` trait in `Authenticatable`
+
+
+## 2.1.0 - 2021-04-07
+- refactor `Authenticatable` class to `AuthModel`

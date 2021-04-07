@@ -2,6 +2,7 @@
 
 namespace Sfneal\Models;
 
+use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
 use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
@@ -15,7 +16,7 @@ abstract class Authenticatable extends Model implements
     AuthorizableContract,
     CanResetPasswordContract
 {
-    use Authenticatable,
+    use AuthenticatableTrait,
         Authorizable,
         CanResetPassword,
         MustVerifyEmail,

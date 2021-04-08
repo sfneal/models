@@ -18,6 +18,7 @@ composer require sfneal/models
 
 ## Usage
 
+### Models
 `AbstractModel`, `AbstractPivot`, & `AbstractAuthenticatable` can be used as parent classes the same way Eloquent's `Model`, `Pivot` & `Authenticatable` can be used.  `AbstractModel` uses `Sfneal\Builders\QueryBuilder` as the default Eloquent Query Builder (see [sfneal/builders](https://packagist.org/packages/sfneal/models).
 
 ``` php
@@ -55,6 +56,39 @@ $model->wasCreated();
 
 // returns true
 $model->wasUpdated();
+```
+
+
+### Builders
+Add the custom QueryBuilder to any Eloquent model by overwriting the built-in newEloquentBuilder() & query() methods.
+
+``` php
+use Illuminate\Database\Eloquent\Builder;
+use Sfneal\Builders\QueryBuilder;
+
+class ExampleModel extends Model
+{
+    /**
+     * Query Builder.
+     *
+     * @param $query
+     * @return QueryBuilder
+     */
+    public function newEloquentBuilder($query)
+    {
+        return new QueryBuilder($query);
+    }
+    
+    /**
+     * Query Builder method for improved type hinting.
+     *
+     * @return QueryBuilder|Builder
+     */
+    public static function query()
+    {
+        return parent::query();
+    }
+}
 ```
 
 ### Testing

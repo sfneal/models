@@ -2,7 +2,7 @@
 
 namespace Sfneal\Models\Tests;
 
-class ModelFactoryTest extends TestCase
+class ModelFactoryTest extends ModelTestCase
 {
     /** @test */
     public function fillables_are_correct_types()

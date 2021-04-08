@@ -4,8 +4,8 @@ namespace Sfneal\Models\Tests\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Sfneal\Builders\QueryBuilder;
+use Sfneal\Models\Model;
 use Sfneal\Models\Tests\Factories\PeopleFactory;
 
 class People extends Model

@@ -1,10 +1,10 @@
 <?php
 
-namespace Sfneal\Builders\Tests;
+namespace Sfneal\Models\Tests;
 
-use Sfneal\Builders\Tests\Models\People;
+use Sfneal\Models\Tests\Models\People;
 
-class MigrationTest extends TestCase
+class MigrationTest extends BuilderTestCase
 {
     /** @test */
     public function it_can_access_the_database()

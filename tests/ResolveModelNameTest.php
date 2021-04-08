@@ -5,7 +5,7 @@ namespace Sfneal\Models\Tests;
 use Sfneal\Models\Actions\ResolveModelName;
 use Sfneal\Models\Tests\Models\CompanyPeople;
 
-class ResolveModelNameTest extends TestCase
+class ResolveModelNameTest extends ModelTestCase
 {
     /** @test */
     public function resolvePeopleModelName()

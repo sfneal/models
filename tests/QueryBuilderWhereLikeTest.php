@@ -1,11 +1,11 @@
 <?php
 
-namespace Sfneal\Builders\Tests;
+namespace Sfneal\Models\Tests;
 
 use Sfneal\Builders\QueryBuilder;
-use Sfneal\Builders\Tests\Models\People;
+use Sfneal\Models\Tests\Models\People;
 
-class QueryBuilderWhereLikeTest extends TestCase
+class QueryBuilderWhereLikeTest extends BuilderTestCase
 {
     private function whereLikeAssertions(QueryBuilder $query)
     {

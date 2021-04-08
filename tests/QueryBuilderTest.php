@@ -1,11 +1,11 @@
 <?php
 
-namespace Sfneal\Builders\Tests;
+namespace Sfneal\Models\Tests;
 
 use Exception;
-use Sfneal\Builders\Tests\Models\People;
+use Sfneal\Models\Tests\Models\People;
 
-class QueryBuilderTest extends TestCase
+class QueryBuilderTest extends BuilderTestCase
 {
     /** @test */
     public function getFlatArray()

@@ -2,7 +2,7 @@
 
 namespace Sfneal\Models\Tests;
 
-class ModelTest extends TestCase
+class ModelTest extends ModelTestCase
 {
     // todo: improve test methods
 

@@ -23,7 +23,7 @@ class ModelTest extends ModelTestCase
     public function getLabel()
     {
         $label = $this->model->getLabel();
-        $this->assertIsInt($label);
+        $this->assertSame($label, $this->model->getKey());
     }
 
     /** @test */

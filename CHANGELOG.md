@@ -99,3 +99,8 @@ All notable changes to `models` will be documented in this file
 
 ## 2.1.0 - 2021-04-07
 - refactor `Authenticatable` class to `AuthModel`
+
+
+## 3.0.0 - 2021-04-08
+- merge sfneal/builders package into sfneal/models package without breaking namespaces
+- cut `Sfneal\Models\Traits\InvalidateModelCache` trait & moved methods to `CacheableAll`

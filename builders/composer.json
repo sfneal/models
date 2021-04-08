@@ -1,0 +1,46 @@
+{
+    "name": "sfneal/builders",
+    "description": "Eloquent\\Builder wrapper with extended functionality",
+    "keywords": [
+        "sfneal",
+        "builder"
+    ],
+    "homepage": "https://github.com/sfneal/builders",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Stephen Neal",
+            "email": "stephen.neal14@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "illuminate/database": ">=8.2",
+        "sfneal/string-helpers": ">=1.0.1"
+    },
+    "require-dev": {
+        "laravel/legacy-factories": ">=1.1.0",
+        "orchestra/testbench": ">=6.7",
+        "phpunit/phpunit": ">=7.5.20"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sfneal\\Builders\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sfneal\\Builders\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "update-test": "composer --prefer-stable update && composer test && composer update --prefer-lowest && composer test && composer update"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

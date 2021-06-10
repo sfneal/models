@@ -4,6 +4,7 @@ namespace Sfneal\Models\Tests;
 
 use Sfneal\Models\Actions\ResolveModelName;
 use Sfneal\Models\Tests\Models\CompanyPeople;
+use Sfneal\Models\Tests\Models\People;
 
 class ResolveModelNameTest extends ModelTestCase
 {
@@ -12,6 +13,16 @@ class ResolveModelNameTest extends ModelTestCase
     {
         $expected = 'People';
         $output = (new ResolveModelName($this->model, true))->execute();
+
+        $this->assertIsString($output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function resolveClassModelName()
+    {
+        $expected = 'People';
+        $output = (new ResolveModelName(People::class, true))->execute();
 
         $this->assertIsString($output);
         $this->assertEquals($expected, $output);

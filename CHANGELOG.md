@@ -104,3 +104,7 @@ All notable changes to `models` will be documented in this file
 ## 2.2.0 - 2021-04-08
 - merge sfneal/builders package into sfneal/models package without breaking namespaces
 - cut `Sfneal\Models\Traits\InvalidateModelCache` trait & moved methods to `CacheableAll`
+
+
+## 2.3.0 - 2021-06-10
+- fix issue with `ResolveModelName` action throwing exception when giving a class string instead of an object

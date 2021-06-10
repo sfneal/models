@@ -10,7 +10,7 @@ use Sfneal\Models\Model;
 class ResolveModelName extends Action
 {
     /**
-     * @var Model
+     * @var Model|string
      */
     private $model;
 
@@ -22,10 +22,10 @@ class ResolveModelName extends Action
     /**
      * ResolveModelName constructor.
      *
-     * @param Model $model
+     * @param Model|string $model
      * @param bool $short
      */
-    public function __construct(Model $model, bool $short = true)
+    public function __construct($model, bool $short = true)
     {
         $this->model = $model;
         $this->short = $short;
@@ -34,9 +34,9 @@ class ResolveModelName extends Action
     /**
      * Retrieve the Model class's short name (without namespace).
      *
-     * @return mixed
+     * @return string
      */
-    public function execute()
+    public function execute(): string
     {
         // Split string on upper case characters
         return implode(' ', (new StringHelpers($this->getClassName()))->camelCaseSplit());
@@ -49,7 +49,11 @@ class ResolveModelName extends Action
      */
     private function getClassName(): string
     {
-        return LaravelHelpers::getClassName($this->model, $this->short, $this->getTableCamelCase());
+        return LaravelHelpers::getClassName(
+            $this->model,
+            $this->short,
+            ! is_string($this->model) ? $this->getTableCamelCase() : null
+        );
     }
 
     /**

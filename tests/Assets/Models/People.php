@@ -4,7 +4,6 @@ namespace Sfneal\Models\Tests\Assets\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Sfneal\Models\Model;
 use Sfneal\Models\ModelWithPublicStatus;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
 use Sfneal\Models\Tests\Assets\Factories\PeopleFactory;

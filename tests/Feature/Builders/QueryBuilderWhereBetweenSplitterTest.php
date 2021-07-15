@@ -9,6 +9,9 @@ use Sfneal\Models\Tests\BuilderTestCase;
 
 class QueryBuilderWhereBetweenSplitterTest extends BuilderTestCase
 {
+    /**
+     * @return array
+     */
     public function ageRangeProvider(): array
     {
         $ranges = [

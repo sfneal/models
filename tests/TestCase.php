@@ -7,7 +7,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sfneal\Models\Tests\Assets\Providers\TestingServiceProvider;
 
-
 class TestCase extends OrchestraTestCase
 {
     use RefreshDatabase;
@@ -21,7 +20,7 @@ class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            TestingServiceProvider::class
+            TestingServiceProvider::class,
         ];
     }
 
@@ -33,7 +32,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        include_once __DIR__ . '/Assets/migrations/create_people_table.php.stub';
+        include_once __DIR__.'/Assets/migrations/create_people_table.php.stub';
 
         (new \CreatePeopleTable())->up();
     }

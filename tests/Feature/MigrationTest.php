@@ -2,7 +2,6 @@
 
 namespace Sfneal\Models\Tests\Feature;
 
-
 use Sfneal\Models\Tests\Assets\Models\People;
 use Sfneal\Models\Tests\BuilderTestCase;
 

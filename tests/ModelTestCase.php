@@ -2,7 +2,6 @@
 
 namespace Sfneal\Models\Tests;
 
-
 use Sfneal\Models\Tests\Assets\Models\People;
 
 class ModelTestCase extends TestCase

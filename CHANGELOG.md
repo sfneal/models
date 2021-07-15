@@ -108,3 +108,8 @@ All notable changes to `models` will be documented in this file
 
 ## 2.3.0 - 2021-06-10
 - fix issue with `ResolveModelName` action throwing exception when giving a class string instead of an object
+
+
+## 2.3.1 - 2021-07-15
+- refactor test classes into `Unit` & `Feature` directories
+- refactor test assets to 'tests/Assets' directory

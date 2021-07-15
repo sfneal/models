@@ -3,7 +3,7 @@
 namespace Sfneal\Models\Tests;
 
 use Illuminate\Database\Eloquent\Collection;
-use Sfneal\Models\Tests\Models\People;
+use Sfneal\Models\Tests\Assets\Models\People;
 
 class BuilderTestCase extends TestCase
 {

@@ -1,8 +1,9 @@
 <?php
 
-namespace Sfneal\Models\Tests;
+namespace Sfneal\Models\Tests\Feature;
 
-use Sfneal\Models\Tests\Models\People;
+use Sfneal\Models\Tests\Assets\Models\People;
+use Sfneal\Models\Tests\BuilderTestCase;
 
 class MigrationTest extends BuilderTestCase
 {

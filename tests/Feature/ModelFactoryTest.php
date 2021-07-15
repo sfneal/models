@@ -1,6 +1,8 @@
 <?php
 
-namespace Sfneal\Models\Tests;
+namespace Sfneal\Models\Tests\Feature;
+
+use Sfneal\Models\Tests\ModelTestCase;
 
 class ModelFactoryTest extends ModelTestCase
 {

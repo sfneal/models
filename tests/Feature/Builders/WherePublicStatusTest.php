@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models\Tests\Feature\Builders;
-
 
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Helpers\Arrays\ArrayHelpers;
@@ -30,7 +28,6 @@ class WherePublicStatusTest extends BuilderTestCase
     public function wherePublic()
     {
         $this->executeAssertions(People::query()->wherePublic(), 1);
-
     }
 
     /** @test */

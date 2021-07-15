@@ -1,6 +1,8 @@
 <?php
 
-namespace Sfneal\Models\Tests;
+namespace Sfneal\Models\Tests\Unit;
+
+use Sfneal\Models\Tests\ModelTestCase;
 
 class ModelTest extends ModelTestCase
 {

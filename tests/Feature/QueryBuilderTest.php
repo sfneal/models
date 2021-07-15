@@ -1,9 +1,10 @@
 <?php
 
-namespace Sfneal\Models\Tests;
+namespace Sfneal\Models\Tests\Feature;
 
 use Exception;
 use Sfneal\Models\Tests\Assets\Models\People;
+use Sfneal\Models\Tests\BuilderTestCase;
 
 class QueryBuilderTest extends BuilderTestCase
 {

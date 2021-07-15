@@ -1,9 +1,10 @@
 <?php
 
-namespace Sfneal\Models\Tests;
+namespace Sfneal\Models\Tests\Feature;
 
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Tests\Assets\Models\People;
+use Sfneal\Models\Tests\BuilderTestCase;
 
 class QueryBuilderWhereLikeTest extends BuilderTestCase
 {

@@ -10,4 +10,11 @@ interface IsPublicInterface
      * @return bool
      */
     public function isPublic(): bool;
+
+    /**
+     * Determine if a Model is identified as 'private'.
+     *
+     * @return bool
+     */
+    public function isPrivate(): bool;
 }

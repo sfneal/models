@@ -3,6 +3,7 @@
 namespace Sfneal\Models\Tests\Feature\Builders;
 
 use Sfneal\Builders\QueryBuilder;
+use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
 use Sfneal\Models\Tests\Assets\Models\People;
 use Sfneal\Models\Tests\BuilderTestCase;
 
@@ -26,6 +27,7 @@ class WhereLikeTest extends BuilderTestCase
     private function whereLikeAssertions(QueryBuilder $query)
     {
         $this->assertTrue($query instanceof QueryBuilder);
+        $this->assertTrue($query instanceof PeopleBuilder);
         $this->assertSame($query->count(), 2);
         $this->assertTrue(in_array('Stephen', $query->getFlatArray('name_first')));
         $this->assertTrue(in_array('Richard', $query->getFlatArray('name_first')));

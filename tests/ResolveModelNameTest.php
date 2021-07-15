@@ -3,8 +3,8 @@
 namespace Sfneal\Models\Tests;
 
 use Sfneal\Models\Actions\ResolveModelName;
-use Sfneal\Models\Tests\Models\CompanyPeople;
-use Sfneal\Models\Tests\Models\People;
+use Sfneal\Models\Tests\Assets\Models\CompanyPeople;
+use Sfneal\Models\Tests\Assets\Models\People;
 
 class ResolveModelNameTest extends ModelTestCase
 {

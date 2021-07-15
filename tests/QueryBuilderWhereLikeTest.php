@@ -3,7 +3,7 @@
 namespace Sfneal\Models\Tests;
 
 use Sfneal\Builders\QueryBuilder;
-use Sfneal\Models\Tests\Models\People;
+use Sfneal\Models\Tests\Assets\Models\People;
 
 class QueryBuilderWhereLikeTest extends BuilderTestCase
 {

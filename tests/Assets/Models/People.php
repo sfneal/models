@@ -1,12 +1,12 @@
 <?php
 
-namespace Sfneal\Models\Tests\Models;
+namespace Sfneal\Models\Tests\Assets\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Model;
-use Sfneal\Models\Tests\Factories\PeopleFactory;
+use Sfneal\Models\Tests\Assets\Factories\PeopleFactory;
 
 class People extends Model
 {

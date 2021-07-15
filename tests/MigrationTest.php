@@ -2,7 +2,8 @@
 
 namespace Sfneal\Models\Tests;
 
-use Sfneal\Models\Tests\Models\People;
+
+use Sfneal\Models\Tests\Assets\Models\People;
 
 class MigrationTest extends BuilderTestCase
 {

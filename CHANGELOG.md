@@ -122,5 +122,5 @@ All notable changes to `models` will be documented in this file
 
 
 ## 2.4.0 - 2021-07-15
-- fix issues with trait & interface declarations in `ModelWithPublicStatus`
+- fix issues with trait & interface declarations in `ModelWithPublicStatus` model
 - make `ModelWithPublicStatusTest` for testing public status traits & interfaces

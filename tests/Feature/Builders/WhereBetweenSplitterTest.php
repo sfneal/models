@@ -29,6 +29,7 @@ class WhereBetweenSplitterTest extends BuilderTestCase
             $data[] = [$min, $max, [$min, $max]];
             $data[] = [$min, $max, "{$min}-{$max}"];
         }
+
         return $data;
     }
 

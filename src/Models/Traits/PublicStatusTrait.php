@@ -25,9 +25,9 @@ trait PublicStatusTrait
      *  - if a $status is not provided, the $status_id is automatically changed
      *
      * @param int|null $status
-     * @return mixed
+     * @return bool
      */
-    public function updatePublicStatus(int $status = null)
+    public function updatePublicStatus(int $status = null): bool
     {
         return $this->update([
             'public_status' => $status ?? ($this->public_status == 1 ? 0 : 1),

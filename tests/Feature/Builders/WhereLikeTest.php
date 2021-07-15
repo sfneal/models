@@ -6,7 +6,7 @@ use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Tests\Assets\Models\People;
 use Sfneal\Models\Tests\BuilderTestCase;
 
-class QueryBuilderWhereLikeTest extends BuilderTestCase
+class WhereLikeTest extends BuilderTestCase
 {
     /**
      * @return array[]

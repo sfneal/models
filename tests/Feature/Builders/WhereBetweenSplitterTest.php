@@ -7,7 +7,7 @@ use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
 use Sfneal\Models\Tests\Assets\Models\People;
 use Sfneal\Models\Tests\BuilderTestCase;
 
-class QueryBuilderWhereBetweenSplitterTest extends BuilderTestCase
+class WhereBetweenSplitterTest extends BuilderTestCase
 {
     /**
      * @return array

@@ -20,14 +20,24 @@ trait PublicStatusTrait
     }
 
     /**
+     * Determine if a Model's 'public_status' is false.
+     *
+     * @return bool
+     */
+    public function isPrivate(): bool
+    {
+        return ! $this->isPublic();
+    }
+
+    /**
      * Update a Model's 'public_status' attribute.
      *
      *  - if a $status is not provided, the $status_id is automatically changed
      *
      * @param int|null $status
-     * @return mixed
+     * @return bool
      */
-    public function updatePublicStatus(int $status = null)
+    public function updatePublicStatus(int $status = null): bool
     {
         return $this->update([
             'public_status' => $status ?? ($this->public_status == 1 ? 0 : 1),

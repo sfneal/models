@@ -119,3 +119,8 @@ All notable changes to `models` will be documented in this file
 - optimize test classes extensions to avoid execution unneeded database seeding
 - add builder feature tests that test the functionality of builder traits using the `PeopleBuilder` test asset
 - add use of dataProviders in test classes with repeated calls using different datasets
+
+
+## 2.4.0 - 2021-07-15
+- fix issues with trait & interface declarations in `ModelWithPublicStatus`
+- make `ModelWithPublicStatusTest` for testing public status traits & interfaces

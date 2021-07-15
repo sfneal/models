@@ -4,7 +4,7 @@ namespace Sfneal\Models\Tests\Feature;
 
 use Sfneal\Models\Tests\ModelTestCase;
 
-class ModelFactoryTest extends ModelTestCase
+class FactoryTest extends ModelTestCase
 {
     /** @test */
     public function fillables_are_correct_types()

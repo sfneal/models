@@ -23,6 +23,7 @@ class CreatePeopleTable extends Migration
             $table->string('city', 50);
             $table->string('state', 20);
             $table->string('zip', 20);
+            $table->smallInteger('public_status')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

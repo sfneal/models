@@ -32,6 +32,7 @@ class People extends Model
         'city',
         'state',
         'zip',
+        'public_status',
     ];
 
     /**

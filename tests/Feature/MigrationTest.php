@@ -3,9 +3,9 @@
 namespace Sfneal\Models\Tests\Feature;
 
 use Sfneal\Models\Tests\Assets\Models\People;
-use Sfneal\Models\Tests\BuilderTestCase;
+use Sfneal\Models\Tests\TestCase;
 
-class MigrationTest extends BuilderTestCase
+class MigrationTest extends TestCase
 {
     /** @test */
     public function it_can_access_the_database()

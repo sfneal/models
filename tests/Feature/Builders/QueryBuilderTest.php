@@ -1,6 +1,6 @@
 <?php
 
-namespace Sfneal\Models\Tests\Feature;
+namespace Sfneal\Models\Tests\Feature\Builders;
 
 use Exception;
 use Sfneal\Models\Tests\Assets\Models\People;

@@ -11,8 +11,8 @@ use Sfneal\Models\Traits\UploadDirectory;
 
 abstract class Model extends EloquentModel
 {
-    use SoftDeletes,
-        UploadDirectory;
+    use SoftDeletes;
+    use UploadDirectory;
 
     /**
      * Retrieve the datetime format used in the timestamp attribute accessors.

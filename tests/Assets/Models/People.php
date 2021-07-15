@@ -4,8 +4,8 @@ namespace Sfneal\Models\Tests\Assets\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Model;
+use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
 use Sfneal\Models\Tests\Assets\Factories\PeopleFactory;
 
 class People extends Model
@@ -32,6 +32,7 @@ class People extends Model
         'city',
         'state',
         'zip',
+        'public_status',
     ];
 
     /**
@@ -48,17 +49,17 @@ class People extends Model
      * Query Builder.
      *
      * @param $query
-     * @return QueryBuilder
+     * @return PeopleBuilder
      */
     public function newEloquentBuilder($query)
     {
-        return new QueryBuilder($query);
+        return new PeopleBuilder($query);
     }
 
     /**
      * Query Builder method for improved type hinting.
      *
-     * @return QueryBuilder|Builder
+     * @return PeopleBuilder|Builder
      */
     public static function query()
     {

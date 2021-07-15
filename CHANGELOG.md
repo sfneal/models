@@ -113,3 +113,9 @@ All notable changes to `models` will be documented in this file
 ## 2.3.1 - 2021-07-15
 - refactor test classes into `Unit` & `Feature` directories
 - refactor test assets to 'tests/Assets' directory
+
+
+## 2.3.2 - 2021-07-15
+- optimize test classes extensions to avoid execution unneeded database seeding
+- add builder feature tests that test the functionality of builder traits using the `PeopleBuilder` test asset
+- add use of dataProviders in test classes with repeated calls using different datasets

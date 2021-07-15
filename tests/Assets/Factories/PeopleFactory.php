@@ -30,6 +30,7 @@ class PeopleFactory extends Factory
             'city' => $this->faker->city,
             'state' => $this->faker->state,
             'zip' => $this->faker->postcode,
+            'public_status' => $this->faker->numberBetween(0, 1),
         ];
     }
 }

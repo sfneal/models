@@ -100,6 +100,45 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
+    public function wasCreated()
+    {
+        $actual = $this->model->wasCreated();
+
+        $this->assertIsBool($actual);
+        $this->assertTrue($actual);
+    }
+
+    /** @test */
+    public function wasUpdated()
+    {
+        $notUpdated = $this->model->wasUpdated();
+        $this->assertIsBool($notUpdated);
+        $this->assertFalse($notUpdated);
+
+        $this->model->update([
+            'name_first' => 'Taylor',
+            'name_last' => 'Hall'
+        ]);
+        $updated = $this->model->wasUpdated();
+        $this->assertIsBool($updated);
+        $this->assertTrue($updated);
+    }
+
+    /** @test */
+    public function wasDeleted()
+    {
+        $notDeleted = $this->model->wasDeleted();
+        $this->assertIsBool($notDeleted);
+        $this->assertFalse($notDeleted);
+
+
+        $this->model->delete();
+        $deleted = $this->model->wasDeleted();
+        $this->assertIsBool($deleted);
+        $this->assertTrue($deleted);
+    }
+
+    /** @test */
     public function getUploadDirectory()
     {
         $uploadDirectory = $this->model->getUploadDirectory();

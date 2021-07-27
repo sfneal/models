@@ -178,6 +178,17 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
+    public function getCreatedForHumansAttribute()
+    {
+        $expected = date('F j, Y', strtotime($this->model->created_at)) . ' at ' . date('g:i a', strtotime($this->model->created_at));
+        $actual = $this->model->created_for_humans;
+
+        $this->assertIsString($actual);
+        $this->assertSame($expected, $actual);
+        $this->assertSame($actual, $this->model->getCreatedForHumansAttribute());
+    }
+
+    /** @test */
     public function getCreatedDiffForHumansAttribute()
     {
         $expected = $this->model->created_at->diffForHumans();
@@ -219,6 +230,17 @@ class ModelTest extends ModelTestCase
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
         $this->assertSame($actual, $this->model->getUpdatedTimestampAttribute());
+    }
+
+    /** @test */
+    public function getUpdatedForHumansAttribute()
+    {
+        $expected = date('F j, Y', strtotime($this->model->updated_at)) . ' at ' . date('g:i a', strtotime($this->model->updated_at));
+        $actual = $this->model->updated_for_humans;
+
+        $this->assertIsString($actual);
+        $this->assertSame($expected, $actual);
+        $this->assertSame($actual, $this->model->getUpdatedForHumansAttribute());
     }
 
     /** @test */

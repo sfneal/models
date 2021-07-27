@@ -218,6 +218,17 @@ abstract class Model extends EloquentModel
     }
 
     /**
+     * Retrieve the 'timestampFormatForHumans' property.
+     *
+     * @param string $stringToTime
+     * @return string
+     */
+    protected function getDatetimeForHumans(string $stringToTime): string
+    {
+        return date('F j, Y', $stringToTime) . ' at ' . date('g:i a', $stringToTime);
+    }
+
+    /**
      * Retrieve the 'created_at' attribute mutated to human readable datetime.
      *
      * @return string
@@ -237,6 +248,18 @@ abstract class Model extends EloquentModel
     public function getCreatedTimestampAttribute(): string
     {
         return date($this->getTimestampFormat(), strtotime($this->created_at));
+    }
+
+    /**
+     * Retrieve the 'created_for_humans' attribute mutated to a timestamp for humans string.
+     *
+     *  - 'created_for_humans' attribute accessor
+     *
+     * @return string
+     */
+    public function getCreatedForHumansAttribute(): string
+    {
+        return $this->getDatetimeForHumans(strtotime($this->created_at));
     }
 
     /**
@@ -281,6 +304,18 @@ abstract class Model extends EloquentModel
     public function getUpdatedTimestampAttribute(): string
     {
         return date($this->getTimestampFormat(), strtotime($this->updated_at));
+    }
+
+    /**
+     * Retrieve the 'updated_for_humans' attribute mutated to a timestamp for humans string.
+     *
+     *  - 'updated_for_humans' attribute accessor
+     *
+     * @return string
+     */
+    public function getUpdatedForHumansAttribute(): string
+    {
+        return $this->getDatetimeForHumans(strtotime($this->updated_at));
     }
 
     /**

@@ -52,6 +52,20 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
+    public function hasNullAttribute()
+    {
+        $this->assertFalse($this->model->hasNullAttribute('name_first'));
+        $this->assertFalse($this->model->hasNullAttribute('name_last'));
+        $this->assertFalse($this->model->hasNullAttribute('email'));
+        $this->assertFalse($this->model->hasNullAttribute('age'));
+        $this->assertFalse($this->model->hasNullAttribute('address'));
+        $this->assertFalse($this->model->hasNullAttribute('city'));
+        $this->assertFalse($this->model->hasNullAttribute('state'));
+        $this->assertFalse($this->model->hasNullAttribute('zip'));
+        $this->assertFalse($this->model->hasNullAttribute('public_status'));
+    }
+
+    /** @test */
     public function getLabel()
     {
         $label = $this->model->getLabel();

@@ -105,7 +105,7 @@ abstract class Model extends EloquentModel
         return
             isset($attr) &&
             array_key_exists($attr, $this->attributesToArray()) &&
-            (!$is_fillable || in_array($attr, $this->getFillable()));
+            (! $is_fillable || in_array($attr, $this->getFillable()));
     }
 
     /**

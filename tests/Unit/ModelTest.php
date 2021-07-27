@@ -178,14 +178,14 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
-    public function getCreatedForHumansAttribute()
+    public function getCreatedDiffForHumansAttribute()
     {
         $expected = $this->model->created_at->diffForHumans();
-        $actual = $this->model->created_for_humans;
+        $actual = $this->model->created_diff_for_humans;
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getCreatedForHumansAttribute());
+        $this->assertSame($actual, $this->model->getCreatedDiffForHumansAttribute());
     }
 
     /** @test */
@@ -222,14 +222,14 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
-    public function getUpdatedForHumansAttribute()
+    public function getUpdatedDiffForHumansAttribute()
     {
         $expected = $this->model->updated_at->diffForHumans();
-        $actual = $this->model->updated_for_humans;
+        $actual = $this->model->updated_diff_for_humans;
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getUpdatedForHumansAttribute());
+        $this->assertSame($actual, $this->model->getUpdatedDiffForHumansAttribute());
     }
 
     /** @test */

@@ -42,6 +42,16 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
+    public function getIsNewColumn()
+    {
+        $expected = 'created_at';
+        $actual = $this->model->getIsNewColumn();
+
+        $this->assertIsString($actual);
+        $this->assertSame($expected, $actual);
+    }
+
+    /** @test */
     public function getLabel()
     {
         $label = $this->model->getLabel();

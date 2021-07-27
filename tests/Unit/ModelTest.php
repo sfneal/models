@@ -12,11 +12,20 @@ class ModelTest extends ModelTestCase
     public function hasAttribute()
     {
         $this->assertTrue($this->model->hasAttribute('name_first', true));
+        $this->assertTrue($this->model->hasAttribute('name_last', true));
+        $this->assertTrue($this->model->hasAttribute('email', true));
+        $this->assertTrue($this->model->hasAttribute('age', true));
         $this->assertTrue($this->model->hasAttribute('address', true));
+        $this->assertTrue($this->model->hasAttribute('city', true));
+        $this->assertTrue($this->model->hasAttribute('state', true));
+        $this->assertTrue($this->model->hasAttribute('zip', true));
+        $this->assertTrue($this->model->hasAttribute('public_status', true));
+
         $this->assertTrue($this->model->hasAttribute('name_full', false));
+        $this->assertTrue($this->model->hasAttribute('name_last_first', false));
         $this->assertTrue($this->model->hasAttribute('address_full', false));
-        $this->assertFalse($this->model->hasAttribute('first_name', true));
-        $this->assertFalse($this->model->hasAttribute('address_latest', true));
+
+        $this->assertFalse($this->model->hasAttribute('address_latest', false));
         $this->assertFalse($this->model->hasAttribute('name_full_with_suffix', false));
         $this->assertFalse($this->model->hasAttribute('address_city', false));
     }

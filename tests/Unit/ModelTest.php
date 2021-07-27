@@ -36,6 +36,12 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
+    public function howNew()
+    {
+        $this->assertIsFloat($this->model->howNew());
+    }
+
+    /** @test */
     public function getLabel()
     {
         $label = $this->model->getLabel();

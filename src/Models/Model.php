@@ -72,9 +72,9 @@ abstract class Model extends EloquentModel
     /**
      * Determine how new a model instance is by subtracting the current time with the created_at time.
      *
-     * @return false|float
+     * @return float
      */
-    public function howNew()
+    public function howNew(): float
     {
         return round((time() - strtotime($this->created_at)) / (60 * 60 * 24));
     }

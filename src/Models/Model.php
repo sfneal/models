@@ -130,16 +130,6 @@ abstract class Model extends EloquentModel
     }
 
     /**
-     * Retrieve the 'created_at' attribute mutated to human readable datetime.
-     *
-     * @return string
-     */
-    public function getDatetimeAttribute(): string
-    {
-        return date('Y-m-d h:i a', strtotime($this->created_at));
-    }
-
-    /**
      * Returns the default 'label' for a model instance.
      *
      * @return mixed
@@ -218,15 +208,13 @@ abstract class Model extends EloquentModel
     }
 
     /**
-     * Retrieve the 'updated_at' attribute mutated to timestamp string.
-     *
-     *  - 'updated_timestamp' attribute accessor
+     * Retrieve the 'created_at' attribute mutated to human readable datetime.
      *
      * @return string
      */
-    public function getUpdatedTimestampAttribute(): string
+    public function getDatetimeAttribute(): string
     {
-        return date($this->timestampFormat, strtotime($this->updated_at));
+        return date('Y-m-d h:i a', strtotime($this->created_at));
     }
 
     /**
@@ -239,18 +227,6 @@ abstract class Model extends EloquentModel
     public function getCreatedTimestampAttribute(): string
     {
         return date($this->timestampFormat, strtotime($this->created_at));
-    }
-
-    /**
-     * Retrieve the 'updated_at' attribute mutated to difference for humans string.
-     *
-     *  - 'updated_for_humans' attribute accessor
-     *
-     * @return string
-     */
-    public function getUpdatedForHumansAttribute(): string
-    {
-        return $this->updated_at->diffForHumans();
     }
 
     /**
@@ -283,6 +259,30 @@ abstract class Model extends EloquentModel
     public function getCreatedTimeAttribute(): string
     {
         return date('h:i A', strtotime($this->created_at));
+    }
+
+    /**
+     * Retrieve the 'updated_at' attribute mutated to timestamp string.
+     *
+     *  - 'updated_timestamp' attribute accessor
+     *
+     * @return string
+     */
+    public function getUpdatedTimestampAttribute(): string
+    {
+        return date($this->timestampFormat, strtotime($this->updated_at));
+    }
+
+    /**
+     * Retrieve the 'updated_at' attribute mutated to difference for humans string.
+     *
+     *  - 'updated_for_humans' attribute accessor
+     *
+     * @return string
+     */
+    public function getUpdatedForHumansAttribute(): string
+    {
+        return $this->updated_at->diffForHumans();
     }
 
     /**

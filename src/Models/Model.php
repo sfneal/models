@@ -124,7 +124,7 @@ abstract class Model extends EloquentModel
      *
      * @return int
      */
-    public function getIdHashAttribute()
+    public function getIdHashAttribute(): int
     {
         return crc32($this->getKey());
     }

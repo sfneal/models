@@ -66,16 +66,21 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
+    public function getIdHashAttribute()
+    {
+        $expected = crc32($this->model->getKey());
+        $actual = $this->model->id_hash;
+
+        $this->assertIsInt($actual);
+        $this->assertSame($expected, $actual);
+        $this->assertSame($actual, $this->model->getIdHashAttribute());
+    }
+
+    /** @test */
     public function getLabel()
     {
         $label = $this->model->getLabel();
         $this->assertSame($label, $this->model->getKey());
-    }
-
-    /** @test */
-    public function idHash()
-    {
-        $this->assertIsInt($this->model->id_hash);
     }
 
     /** @test */

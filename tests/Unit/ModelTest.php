@@ -180,7 +180,7 @@ class ModelTest extends ModelTestCase
     /** @test */
     public function getCreatedForHumansAttribute()
     {
-        $expected = date('F j, Y', strtotime($this->model->created_at)) . ' at ' . date('g:i a', strtotime($this->model->created_at));
+        $expected = date('F j, Y', strtotime($this->model->created_at)).' at '.date('g:i a', strtotime($this->model->created_at));
         $actual = $this->model->created_for_humans;
 
         $this->assertIsString($actual);
@@ -235,7 +235,7 @@ class ModelTest extends ModelTestCase
     /** @test */
     public function getUpdatedForHumansAttribute()
     {
-        $expected = date('F j, Y', strtotime($this->model->updated_at)) . ' at ' . date('g:i a', strtotime($this->model->updated_at));
+        $expected = date('F j, Y', strtotime($this->model->updated_at)).' at '.date('g:i a', strtotime($this->model->updated_at));
         $actual = $this->model->updated_for_humans;
 
         $this->assertIsString($actual);

@@ -225,7 +225,7 @@ abstract class Model extends EloquentModel
      */
     protected function getDatetimeForHumans(string $stringToTime): string
     {
-        return date('F j, Y', $stringToTime) . ' at ' . date('g:i a', $stringToTime);
+        return date('F j, Y', $stringToTime).' at '.date('g:i a', $stringToTime);
     }
 
     /**

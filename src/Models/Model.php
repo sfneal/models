@@ -246,7 +246,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getCreatedForHumansAttribute(): string
+    public function getCreatedDiffForHumansAttribute(): string
     {
         return $this->created_at->diffForHumans();
     }
@@ -290,7 +290,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getUpdatedForHumansAttribute(): string
+    public function getUpdatedDiffForHumansAttribute(): string
     {
         return $this->updated_at->diffForHumans();
     }

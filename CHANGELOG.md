@@ -130,3 +130,7 @@ All notable changes to `models` will be documented in this file
 - fix issues with `Model::hasAttribute()` method incorrectly returning true
 - optimize return type hinting in various `Model` methods
 - add test methods to `ModelTest` that test all remaining `Model` methods & properties
+
+
+## 2.5.0 - 2021-07-27
+- refactor `Model` class's `updated_for_humans` & `created_for_humans` attributes to `updated_diff_for_humans` & `created_diff_for_humans`

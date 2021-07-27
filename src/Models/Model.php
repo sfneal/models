@@ -218,6 +218,17 @@ abstract class Model extends EloquentModel
     }
 
     /**
+     * Retrieve the 'timestampFormatForHumans' property.
+     *
+     * @param string $stringToTime
+     * @return string
+     */
+    protected function getDatetimeForHumans(string $stringToTime): string
+    {
+        return date('F j, Y', $stringToTime).' at '.date('g:i a', $stringToTime);
+    }
+
+    /**
      * Retrieve the 'created_at' attribute mutated to human readable datetime.
      *
      * @return string
@@ -240,13 +251,25 @@ abstract class Model extends EloquentModel
     }
 
     /**
-     * Retrieve the 'created_at' attribute mutated to difference for humans string.
+     * Retrieve the 'created_for_humans' attribute mutated to a timestamp for humans string.
      *
      *  - 'created_for_humans' attribute accessor
      *
      * @return string
      */
     public function getCreatedForHumansAttribute(): string
+    {
+        return $this->getDatetimeForHumans(strtotime($this->created_at));
+    }
+
+    /**
+     * Retrieve the 'created_at' attribute mutated to difference for humans string.
+     *
+     *  - 'created_for_humans' attribute accessor
+     *
+     * @return string
+     */
+    public function getCreatedDiffForHumansAttribute(): string
     {
         return $this->created_at->diffForHumans();
     }
@@ -284,13 +307,25 @@ abstract class Model extends EloquentModel
     }
 
     /**
-     * Retrieve the 'updated_at' attribute mutated to difference for humans string.
+     * Retrieve the 'updated_for_humans' attribute mutated to a timestamp for humans string.
      *
      *  - 'updated_for_humans' attribute accessor
      *
      * @return string
      */
     public function getUpdatedForHumansAttribute(): string
+    {
+        return $this->getDatetimeForHumans(strtotime($this->updated_at));
+    }
+
+    /**
+     * Retrieve the 'updated_at' attribute mutated to difference for humans string.
+     *
+     *  - 'updated_for_humans' attribute accessor
+     *
+     * @return string
+     */
+    public function getUpdatedDiffForHumansAttribute(): string
     {
         return $this->updated_at->diffForHumans();
     }

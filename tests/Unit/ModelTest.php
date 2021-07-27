@@ -6,8 +6,6 @@ use Sfneal\Models\Tests\ModelTestCase;
 
 class ModelTest extends ModelTestCase
 {
-    // todo: improve test methods
-
     /** @test */
     public function isNew()
     {
@@ -260,6 +258,7 @@ class ModelTest extends ModelTestCase
     /** @test */
     public function getUploadDirectory()
     {
+        // todo: refactor to a trait test class
         $uploadDirectory = $this->model->getUploadDirectory();
         $this->assertIsString($uploadDirectory);
         $this->assertTrue($uploadDirectory == "files/{$this->model->getTableName()}/{$this->model->getKey()}");

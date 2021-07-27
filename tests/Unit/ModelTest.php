@@ -115,7 +115,7 @@ class ModelTest extends ModelTestCase
 
         $this->model->update([
             'name_first' => 'Taylor',
-            'name_last' => 'Hall'
+            'name_last' => 'Hall',
         ]);
         $updated = $this->model->wasUpdated();
         $this->assertIsBool($updated);
@@ -128,7 +128,6 @@ class ModelTest extends ModelTestCase
         $notDeleted = $this->model->wasDeleted();
         $this->assertIsBool($notDeleted);
         $this->assertFalse($notDeleted);
-
 
         $this->model->delete();
         $deleted = $this->model->wasDeleted();

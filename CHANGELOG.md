@@ -135,3 +135,7 @@ All notable changes to `models` will be documented in this file
 ## 2.5.0 - 2021-07-27
 - refactor `Model` class's `updated_for_humans` & `created_for_humans` attributes to `updated_diff_for_humans` & `created_diff_for_humans`
 - add 'created_for_humans' & 'updated_for_humans' attribute accessors to `Model` that display timestamps in a human-readable format ("F j, Y, g:i a" => "March 10, 2001, 5:16 pm")
+
+
+## 2.5.1 - 2021-07-27
+- fix issue with `Model::getDatetimeForHumans()` $stringToTime parameter type hinting

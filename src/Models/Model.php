@@ -220,10 +220,10 @@ abstract class Model extends EloquentModel
     /**
      * Retrieve the 'timestampFormatForHumans' property.
      *
-     * @param string $stringToTime
+     * @param int $stringToTime
      * @return string
      */
-    protected function getDatetimeForHumans(string $stringToTime): string
+    protected function getDatetimeForHumans(int $stringToTime): string
     {
         return date('F j, Y', $stringToTime).' at '.date('g:i a', $stringToTime);
     }

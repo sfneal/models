@@ -125,6 +125,16 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
+    public function mostRecentChange()
+    {
+        $expected = 'created';
+        $actual = $this->model->mostRecentChange();
+
+        $this->assertIsString($actual);
+        $this->assertSame($expected, $actual);
+    }
+
+    /** @test */
     public function wasDeleted()
     {
         $notDeleted = $this->model->wasDeleted();

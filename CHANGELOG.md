@@ -124,3 +124,9 @@ All notable changes to `models` will be documented in this file
 ## 2.4.0 - 2021-07-15
 - fix issues with trait & interface declarations in `ModelWithPublicStatus` model
 - make `ModelWithPublicStatusTest` for testing public status traits & interfaces
+
+
+## 2.4.1 - 2021-07-27
+- fix issues with `Model::hasAttribute()` method incorrectly returning true
+- optimize return type hinting in various `Model` methods
+- add test methods to `ModelTest` that test all remaining `Model` methods & properties

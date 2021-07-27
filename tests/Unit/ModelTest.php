@@ -125,16 +125,6 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
-    public function mostRecentChange()
-    {
-        $expected = 'created';
-        $actual = $this->model->mostRecentChange();
-
-        $this->assertIsString($actual);
-        $this->assertSame($expected, $actual);
-    }
-
-    /** @test */
     public function wasDeleted()
     {
         $notDeleted = $this->model->wasDeleted();
@@ -146,6 +136,27 @@ class ModelTest extends ModelTestCase
         $deleted = $this->model->wasDeleted();
         $this->assertIsBool($deleted);
         $this->assertTrue($deleted);
+    }
+
+    /** @test */
+    public function mostRecentChange()
+    {
+        $expected = 'created';
+        $actual = $this->model->mostRecentChange();
+
+        $this->assertIsString($actual);
+        $this->assertSame($expected, $actual);
+    }
+
+    /** @test */
+    public function getDatetimeAttribute()
+    {
+        $expected = date('Y-m-d h:i a', strtotime($this->model->created_at));
+        $actual = $this->model->datetime;
+
+        $this->assertIsString($actual);
+        $this->assertSame($expected, $actual);
+        $this->assertSame($actual, $this->model->getDatetimeAttribute());
     }
 
     /** @test */

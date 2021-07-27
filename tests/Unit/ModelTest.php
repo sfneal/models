@@ -160,6 +160,16 @@ class ModelTest extends ModelTestCase
     }
 
     /** @test */
+    public function getTimestampFormat()
+    {
+        $expected = 'Y-m-d h:i a';
+        $actual = $this->model->getTimestampFormat();
+
+        $this->assertIsString($actual);
+        $this->assertSame($expected, $actual);
+    }
+
+    /** @test */
     public function getUploadDirectory()
     {
         $uploadDirectory = $this->model->getUploadDirectory();

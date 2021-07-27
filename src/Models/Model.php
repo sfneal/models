@@ -208,6 +208,16 @@ abstract class Model extends EloquentModel
     }
 
     /**
+     * Retrieve the 'timestampFormat' property.
+     *
+     * @return string
+     */
+    public function getTimestampFormat(): string
+    {
+        return $this->timestampFormat;
+    }
+
+    /**
      * Retrieve the 'created_at' attribute mutated to human readable datetime.
      *
      * @return string
@@ -226,7 +236,7 @@ abstract class Model extends EloquentModel
      */
     public function getCreatedTimestampAttribute(): string
     {
-        return date($this->timestampFormat, strtotime($this->created_at));
+        return date($this->getTimestampFormat(), strtotime($this->created_at));
     }
 
     /**
@@ -270,7 +280,7 @@ abstract class Model extends EloquentModel
      */
     public function getUpdatedTimestampAttribute(): string
     {
-        return date($this->timestampFormat, strtotime($this->updated_at));
+        return date($this->getTimestampFormat(), strtotime($this->updated_at));
     }
 
     /**

@@ -20,6 +20,6 @@ class ModelTestCase extends TestCase
     {
         parent::setUp();
 
-        $this->model = People::factory()->make();
+        $this->model = People::factory()->create();
     }
 }

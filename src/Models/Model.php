@@ -72,9 +72,9 @@ abstract class Model extends EloquentModel
     /**
      * Determine how new a model instance is by subtracting the current time with the created_at time.
      *
-     * @return false|float
+     * @return float
      */
-    public function howNew()
+    public function howNew(): float
     {
         return round((time() - strtotime($this->created_at)) / (60 * 60 * 24));
     }
@@ -104,8 +104,8 @@ abstract class Model extends EloquentModel
         // Determine that the attribute exists and optionally weather it is fillable
         return
             isset($attr) &&
-            (bool) $this->$attr &&
-            ($is_fillable ? (array_key_exists($attr, $this->fillable) || in_array($attr, $this->fillable)) : true);
+            array_key_exists($attr, $this->attributesToArray()) &&
+            (! $is_fillable || in_array($attr, $this->getFillable()));
     }
 
     /**
@@ -124,19 +124,9 @@ abstract class Model extends EloquentModel
      *
      * @return int
      */
-    public function getIdHashAttribute()
+    public function getIdHashAttribute(): int
     {
         return crc32($this->getKey());
-    }
-
-    /**
-     * Retrieve the 'created_at' attribute mutated to human readable datetime.
-     *
-     * @return string
-     */
-    public function getDatetimeAttribute(): string
-    {
-        return date('Y-m-d h:i a', strtotime($this->created_at));
     }
 
     /**
@@ -218,15 +208,23 @@ abstract class Model extends EloquentModel
     }
 
     /**
-     * Retrieve the 'updated_at' attribute mutated to timestamp string.
-     *
-     *  - 'updated_timestamp' attribute accessor
+     * Retrieve the 'timestampFormat' property.
      *
      * @return string
      */
-    public function getUpdatedTimestampAttribute(): string
+    public function getTimestampFormat(): string
     {
-        return date($this->timestampFormat, strtotime($this->updated_at));
+        return $this->timestampFormat;
+    }
+
+    /**
+     * Retrieve the 'created_at' attribute mutated to human readable datetime.
+     *
+     * @return string
+     */
+    public function getDatetimeAttribute(): string
+    {
+        return date('Y-m-d h:i a', strtotime($this->created_at));
     }
 
     /**
@@ -238,19 +236,7 @@ abstract class Model extends EloquentModel
      */
     public function getCreatedTimestampAttribute(): string
     {
-        return date($this->timestampFormat, strtotime($this->created_at));
-    }
-
-    /**
-     * Retrieve the 'updated_at' attribute mutated to difference for humans string.
-     *
-     *  - 'updated_for_humans' attribute accessor
-     *
-     * @return string
-     */
-    public function getUpdatedForHumansAttribute(): string
-    {
-        return $this->updated_at->diffForHumans();
+        return date($this->getTimestampFormat(), strtotime($this->created_at));
     }
 
     /**
@@ -283,6 +269,30 @@ abstract class Model extends EloquentModel
     public function getCreatedTimeAttribute(): string
     {
         return date('h:i A', strtotime($this->created_at));
+    }
+
+    /**
+     * Retrieve the 'updated_at' attribute mutated to timestamp string.
+     *
+     *  - 'updated_timestamp' attribute accessor
+     *
+     * @return string
+     */
+    public function getUpdatedTimestampAttribute(): string
+    {
+        return date($this->getTimestampFormat(), strtotime($this->updated_at));
+    }
+
+    /**
+     * Retrieve the 'updated_at' attribute mutated to difference for humans string.
+     *
+     *  - 'updated_for_humans' attribute accessor
+     *
+     * @return string
+     */
+    public function getUpdatedForHumansAttribute(): string
+    {
+        return $this->updated_at->diffForHumans();
     }
 
     /**

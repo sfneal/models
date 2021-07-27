@@ -124,3 +124,7 @@ All notable changes to `models` will be documented in this file
 ## 2.4.0 - 2021-07-15
 - fix issues with trait & interface declarations in `ModelWithPublicStatus` model
 - make `ModelWithPublicStatusTest` for testing public status traits & interfaces
+
+
+## 2.5.0 - 2021-07-27
+- refactor `Model` class's `updated_for_humans` & `created_for_humans` attributes to `updated_diff_for_humans` & `created_diff_for_humans`

@@ -19,7 +19,7 @@
         "php": ">=7.3",
         "illuminate/database": ">=8.2",
         "sfneal/actions": "^2.0",
-        "sfneal/laravel-helpers": ">=1.0",
+        "sfneal/laravel-helpers": "^2.0",
         "sfneal/redis-helpers": ">=1.2",
         "sfneal/string-helpers": ">=1.1.4"
     },

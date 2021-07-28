@@ -5,9 +5,9 @@ namespace Sfneal\Models\Tests\Feature\Builders;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
 use Sfneal\Models\Tests\Assets\Models\People;
-use Sfneal\Models\Tests\BuilderTestCase;
+use Sfneal\Models\Tests\SeededTestCase;
 
-class WhereLikeTest extends BuilderTestCase
+class WhereLikeTest extends SeededTestCase
 {
     /**
      * @return array[]

@@ -6,9 +6,9 @@ use Sfneal\Builders\QueryBuilder;
 use Sfneal\Helpers\Arrays\ArrayHelpers;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
 use Sfneal\Models\Tests\Assets\Models\People;
-use Sfneal\Models\Tests\BuilderTestCase;
+use Sfneal\Models\Tests\SeededTestCase;
 
-class WherePublicStatusTest extends BuilderTestCase
+class WherePublicStatusTest extends SeededTestCase
 {
     /**
      * @param $query

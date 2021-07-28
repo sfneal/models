@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models\Traits;
-
 
 trait SoftDeletesIgnored
 {
@@ -15,6 +13,5 @@ trait SoftDeletesIgnored
      */
     public static function bootSoftDeletes()
     {
-
     }
 }

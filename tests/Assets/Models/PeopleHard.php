@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models\Tests\Assets\Models;
-
 
 use Sfneal\Models\Traits\SoftDeletesIgnored;
 

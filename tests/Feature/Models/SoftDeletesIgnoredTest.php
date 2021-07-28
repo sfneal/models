@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Models\Tests\Feature\Models;
-
 
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Sfneal\Models\Tests\Assets\Models\PeopleHard;

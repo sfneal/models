@@ -139,3 +139,7 @@ All notable changes to `models` will be documented in this file
 
 ## 2.5.1 - 2021-07-27
 - fix issue with `Model::getDatetimeForHumans()` $stringToTime parameter type hinting
+
+
+## 2.6.0 - 2021-07-28
+- make `SoftDeletesIgnored` trait for preventing the `SoftDeletesScope` from being applied to models (useful when `Sfneal\Models\Model` is needed but not soft deleting)

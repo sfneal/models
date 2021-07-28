@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Database\Seeders;
-
 
 use Illuminate\Database\Seeder;
 use Sfneal\Helpers\Laravel\AppInfo;

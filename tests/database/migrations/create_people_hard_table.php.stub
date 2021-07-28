@@ -1,0 +1,14 @@
+<?php
+
+class CreatePeopleHardTable extends CreatePeopleTable
+{
+    /**
+     * @var bool Name of the database table.
+     */
+    protected $table = 'people_hard';
+
+    /**
+     * @var bool Determines if soft deleting columns should be added to the model.
+     */
+    protected $softDeletes = false;
+}

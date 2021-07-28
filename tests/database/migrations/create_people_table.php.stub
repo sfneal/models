@@ -7,14 +7,26 @@ use Illuminate\Support\Facades\Schema;
 class CreatePeopleTable extends Migration
 {
     /**
-     * @var bool Name of the database table.
+     * @var string Name of the database table.
      */
-    protected $table = 'people';
+    protected $table;
 
     /**
      * @var bool Determines if soft deleting columns should be added to the model.
      */
-    protected $softDeletes = true;
+    protected $softDeletes;
+
+    /**
+     * CreatePeopleTable constructor.
+     *
+     * @param string $table
+     * @param bool $softDeletes
+     */
+    public function __construct(string $table = 'people', bool $softDeletes = true)
+    {
+        $this->table = $table;
+        $this->softDeletes = $softDeletes;
+    }
 
     /**
      * Run the migrations.

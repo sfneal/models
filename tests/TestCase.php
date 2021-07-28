@@ -34,8 +34,6 @@ class TestCase extends OrchestraTestCase
     {
         include_once __DIR__ . '/database/migrations/create_people_table.php.stub';
         (new \CreatePeopleTable())->up();
-
-        include_once __DIR__ . '/database/migrations/create_people_hard_table.php.stub';
-        (new \CreatePeopleHardTable())->up();
+        (new \CreatePeopleTable('people_hard', false))->up();
     }
 }

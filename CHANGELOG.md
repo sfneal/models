@@ -146,5 +146,5 @@ All notable changes to `models` will be documented in this file
 
 
 ## 2.6.1 - 2021-07-28
-- make `SoftDeletesIgnoredTest` for testing `SoftDeletesIgnored` trait
+- add `SoftDeletesIgnoredTest` for testing `SoftDeletesIgnored` trait
 

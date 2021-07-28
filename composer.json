@@ -37,7 +37,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Sfneal\\Models\\Tests\\": "tests"
+            "Sfneal\\Models\\Tests\\": "tests",
+            "Database\\Factories\\": "tests/database/factories/",
+            "Database\\Seeders\\": "tests/database/seeders/"
         }
     },
     "scripts": {

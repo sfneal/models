@@ -32,7 +32,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        include_once __DIR__.'/Assets/migrations/create_people_table.php.stub';
+        include_once __DIR__ . '/database/migrations/create_people_table.php.stub';
 
         (new \CreatePeopleTable())->up();
     }

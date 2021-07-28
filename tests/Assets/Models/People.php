@@ -2,11 +2,11 @@
 
 namespace Sfneal\Models\Tests\Assets\Models;
 
+use Database\Factories\PeopleFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Sfneal\Models\ModelWithPublicStatus;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
-use Sfneal\Models\Tests\Assets\Factories\PeopleFactory;
 
 class People extends ModelWithPublicStatus
 {

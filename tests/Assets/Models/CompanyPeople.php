@@ -2,9 +2,9 @@
 
 namespace Sfneal\Models\Tests\Assets\Models;
 
+use Database\Factories\CompanyPeopleFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Sfneal\Models\Model;
-use Sfneal\Models\Tests\Assets\Factories\CompanyPeopleFactory;
 
 class CompanyPeople extends Model
 {

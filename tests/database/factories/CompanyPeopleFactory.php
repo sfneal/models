@@ -1,18 +1,18 @@
 <?php
 
-namespace Sfneal\Models\Tests\Assets\Factories;
+namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Sfneal\Models\Tests\Assets\Models\People;
+use Sfneal\Models\Tests\Assets\Models\CompanyPeople;
 
-class PeopleFactory extends Factory
+class CompanyPeopleFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = People::class;
+    protected $model = CompanyPeople::class;
 
     /**
      * Define the model's default state.
@@ -22,6 +22,7 @@ class PeopleFactory extends Factory
     public function definition(): array
     {
         return [
+            'company_person_id' => $this->faker->uuid,
             'name_first' => $this->faker->firstName,
             'name_last' => $this->faker->lastName,
             'email' => $this->faker->safeEmail,
@@ -30,7 +31,6 @@ class PeopleFactory extends Factory
             'city' => $this->faker->city,
             'state' => $this->faker->state,
             'zip' => $this->faker->postcode,
-            'public_status' => $this->faker->numberBetween(0, 1),
         ];
     }
 }

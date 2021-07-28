@@ -3,9 +3,9 @@
 namespace Sfneal\Models\Tests\Feature\Models;
 
 use Sfneal\Models\Tests\Assets\Models\People;
-use Sfneal\Models\Tests\BuilderTestCase;
+use Sfneal\Models\Tests\SeededTestCase;
 
-class ModelWithPublicStatusTest extends BuilderTestCase
+class ModelWithPublicStatusTest extends SeededTestCase
 {
     /** @test */
     public function isPublic()

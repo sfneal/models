@@ -4,9 +4,9 @@ namespace Sfneal\Models\Tests\Feature\Builders;
 
 use Exception;
 use Sfneal\Models\Tests\Assets\Models\People;
-use Sfneal\Models\Tests\BuilderTestCase;
+use Sfneal\Models\Tests\SeededTestCase;
 
-class QueryBuilderTest extends BuilderTestCase
+class QueryBuilderTest extends SeededTestCase
 {
     /** @test */
     public function getFlatArray()

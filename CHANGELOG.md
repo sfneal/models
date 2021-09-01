@@ -151,4 +151,5 @@ All notable changes to `models` will be documented in this file
  
 ## 2.6.2 - 2021-09-01
 - fix use of '#' cache key id suffix delimiter with ':'
+- add sfneal/array-helpers to composer dev requirements
 

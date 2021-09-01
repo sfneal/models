@@ -20,7 +20,7 @@ class WherePublicStatusTest extends SeededTestCase
         $this->assertTrue($query instanceof PeopleBuilder);
 
         $this->assertTrue(
-            (new ArrayHelpers($query->pluck('public_status')->toArray()))->arrayValuesEqual($value)
+            ArrayHelpers::from($query->pluck('public_status')->toArray())->valuesEqual($value)
         );
     }
 

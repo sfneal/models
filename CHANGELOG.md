@@ -156,3 +156,7 @@ All notable changes to `models` will be documented in this file
 
 ## 2.6.3 - 2021-09-01
 - add support for sfneal/redis-helpers v2.0
+
+
+## 2.7.0 - 2021-09-01
+- cut `CityStateAccessors` trait as it belongs in sfneal/address

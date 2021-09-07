@@ -5,6 +5,7 @@ namespace Sfneal\Builders;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Facades\DB;
 use Sfneal\Builders\Traits\CountAndPaginate;
 use Sfneal\Models\Model;
 
@@ -67,12 +68,19 @@ class QueryBuilder extends EloquentBuilder
      */
     protected function concatColumns(string $column1, string $column2, string $delimiter = ' '): string
     {
-        // Prepend table name if its been declared
+        // Prepend table name if it's been declared
         $column1 = (isset($this->tableName)) ? "{$this->tableName}.{$column1}" : $column1;
         $column2 = (isset($this->tableName)) ? "{$this->tableName}.{$column2}" : $column2;
 
-        // Return concatenate the two columns using the delimiter
-        return "concat({$column1}, '{$delimiter}', {$column2})";
+        // Use Sqlite syntax
+        if (DB::connection()->getDatabaseName() == ':memory:') {
+            return "{$column1} || '{$delimiter}' || {$column2}";
+        }
+
+        // Use standard syntax
+        else {
+            return "concat({$column1}, '{$delimiter}', {$column2})";
+        }
     }
 
     /**

@@ -25,7 +25,7 @@ class QueryBuilderTest extends SeededTestCase
     public function selectRawJson()
     {
         $results = People::query()
-            ->selectRawJson('people.person_id as id, people.name_last as text')
+            ->selectRawJson()
             ->countAndPaginate();
 
         $this->assertSame($results['total_count'], 22);

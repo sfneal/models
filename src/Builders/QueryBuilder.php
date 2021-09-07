@@ -93,7 +93,15 @@ class QueryBuilder extends EloquentBuilder
      */
     protected function ifStatement(string $condition, string $expr_true, string $expr_false): string
     {
-        return "if({$condition}, {$expr_true}, {$expr_false})";
+        // Use Sqlite syntax
+        if (DB::connection()->getDatabaseName() == ':memory:') {
+            return "iff({$condition}, {$expr_true}, {$expr_false})";
+        }
+
+        // Use standard syntax
+        else {
+            return "if({$condition}, {$expr_true}, {$expr_false})";
+        }
     }
 
     /**

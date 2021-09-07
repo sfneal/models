@@ -95,7 +95,7 @@ class QueryBuilder extends EloquentBuilder
     {
         // Use Sqlite syntax
         if (DB::connection()->getDatabaseName() == ':memory:') {
-            return "iff({$condition}, {$expr_true}, {$expr_false})";
+            return "CASE WHEN {$condition} THEN {$expr_true} ELSE {$expr_false} END";
         }
 
         // Use standard syntax

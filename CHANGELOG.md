@@ -165,3 +165,7 @@ All notable changes to `models` will be documented in this file
 ## 2.8.0 - 2021-09-07
 - fix issues with use of `QueryBuilder::concatColumns()` method when using a 'Sqlite' database connection (added support for Sqlite concat syntax)
 - fix issues with use of `QueryBuilder::ifStatement()` method when using a 'Sqlite' database connection (added support for Sqlite concat syntax)
+
+
+## 2.8.1 - 2021-09-07
+- fix issue use of 'IFF' Sqlite function `QueryBuilder::ifStatement()` by replacing with use of 'CASE'

@@ -22,8 +22,8 @@ class ResolveModelName extends Action
     /**
      * ResolveModelName constructor.
      *
-     * @param Model|string $model
-     * @param bool $short
+     * @param  Model|string  $model
+     * @param  bool  $short
      */
     public function __construct($model, bool $short = true)
     {

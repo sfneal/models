@@ -12,7 +12,7 @@ trait CacheableAll
     /**
      * Retrieve a Collection of all instances of this model.
      *
-     * @param array $columns
+     * @param  array  $columns
      * @return Collection|mixed
      */
     public static function all($columns = ['*'])
@@ -28,7 +28,7 @@ trait CacheableAll
     /**
      * Invalidate a Model's cache.
      *
-     * @param string|null $key
+     * @param  string|null  $key
      * @return array
      */
     public static function invalidateCache(string $key = null)

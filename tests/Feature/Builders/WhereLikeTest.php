@@ -22,7 +22,7 @@ class WhereLikeTest extends SeededTestCase
     }
 
     /**
-     * @param QueryBuilder $query
+     * @param  QueryBuilder  $query
      */
     private function whereLikeAssertions(QueryBuilder $query)
     {
@@ -36,10 +36,11 @@ class WhereLikeTest extends SeededTestCase
     /**
      * @test
      * @dataProvider queryParamProvider
-     * @param string $column
+     *
+     * @param  string  $column
      * @param $value
-     * @param bool $leadingWildcard
-     * @param bool $trailingWildcard
+     * @param  bool  $leadingWildcard
+     * @param  bool  $trailingWildcard
      */
     public function whereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard = true)
     {

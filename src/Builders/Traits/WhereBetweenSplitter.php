@@ -10,11 +10,11 @@ trait WhereBetweenSplitter
     /**
      * whereBetween clause extension that accepts a string value instead of array.
      *
-     * @param string $column DB column
-     * @param string|mixed $values Two 'between' values with a separator
-     * @param string $sep separator character
-     * @param bool $allow_where Allow for standard 'where' clause $values cannot be split
-     * @param string $where_operator
+     * @param  string  $column  DB column
+     * @param  string|mixed  $values  Two 'between' values with a separator
+     * @param  string  $sep  separator character
+     * @param  bool  $allow_where  Allow for standard 'where' clause $values cannot be split
+     * @param  string  $where_operator
      * @return WhereBetweenSplitter|Builder
      */
     public function whereBetweenSplitter(string $column, $values, string $sep = '-', bool $allow_where = true, $where_operator = '=')
@@ -48,7 +48,7 @@ trait WhereBetweenSplitter
      *  - $sep is found not in $values
      *
      * @param $values
-     * @param string $sep
+     * @param  string  $sep
      * @return bool
      */
     private static function isSplitableValue($values, string $sep = '-'): bool

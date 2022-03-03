@@ -7,7 +7,7 @@ trait CountAndPaginate
     /**
      * Retrieve raw query results formatted for Ajax select2 form inputs.
      *
-     * @param int $per_page
+     * @param  int  $per_page
      * @return array
      */
     public function countAndPaginate($per_page = 30): array

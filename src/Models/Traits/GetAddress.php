@@ -7,7 +7,7 @@ trait GetAddress
     /**
      * Retrieve a file path for a file type.
      *
-     * @param string $type
+     * @param  string  $type
      * @return mixed
      */
     public function getAddress(string $type)

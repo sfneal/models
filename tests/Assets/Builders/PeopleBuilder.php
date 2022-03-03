@@ -22,7 +22,7 @@ class PeopleBuilder extends QueryBuilder
     /**
      * UserBuilder constructor.
      *
-     * @param Builder $query
+     * @param  Builder  $query
      */
     public function __construct(Builder $query)
     {

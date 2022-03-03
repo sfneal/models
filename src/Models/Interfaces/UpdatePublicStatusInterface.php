@@ -9,7 +9,7 @@ interface UpdatePublicStatusInterface
      *
      *  - if a $status is not provided, the $status_id is automatically changed
      *
-     * @param int|null $status
+     * @param  int|null  $status
      * @return bool
      */
     public function updatePublicStatus(int $status = null): bool;

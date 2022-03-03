@@ -44,6 +44,7 @@ class QueryBuilderTest extends SeededTestCase
 
     /**
      * @test
+     *
      * @throws Exception
      */
     public function getNextModel()
@@ -61,6 +62,7 @@ class QueryBuilderTest extends SeededTestCase
 
     /**
      * @test
+     *
      * @throws Exception
      */
     public function getPreviousModel()

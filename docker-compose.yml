@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+    models:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: "stephenneal/models:${TAG}"
+        env_file: .env.docker
+        container_name: models
+        tty: true
+        volumes:
+            - models:/var/www
+        depends_on:
+            - models-cache
+        networks:
+            - models-network
+
+    models-cache:
+        container_name: models-cache
+        image: redis:6-alpine
+        command: ["redis-server", "--appendonly yes", "--port 9576"]
+        ports:
+            - "9576:9576"
+        volumes:
+            - models-cache:/data
+        networks:
+            - models-network
+
+
+# Networks
+networks:
+    models-network:
+        driver: bridge
+
+# Volumes
+volumes:
+    models:
+    models-cache:

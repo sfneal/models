@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
+        "php": "^7.3|^8.0",
         "illuminate/database": ">=8.2",
         "sfneal/actions": "^2.0",
         "sfneal/laravel-helpers": "^2.0",
@@ -25,8 +25,8 @@
     },
     "require-dev": {
         "laravel/legacy-factories": ">=1.1.0",
-        "orchestra/testbench": ">=6.7",
-        "phpunit/phpunit": ">=7.5.20",
+        "orchestra/testbench": "^6.24.1|^7.0",
+        "phpunit/phpunit": "^9.3",
         "sfneal/array-helpers": "^3.0",
         "scrutinizer/ocular": "^1.8"
     },
@@ -45,9 +45,42 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
+        "test-both": [
+            "composer test",
+            "composer docker-test"
+        ],
+        "test-lowest" : [
+            "composer update --prefer-lowest",
+            "composer test"
+        ],
+        "test-all": [
+            "composer update-test",
+            "composer docker-test-all"
+        ],
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
         "upload-coverage": "php vendor/bin/ocular code-coverage:upload --format=php-clover phpunit.xml.dist",
-        "update-test": "composer --prefer-stable update && composer test && composer update --prefer-lowest && composer test && composer update"
+        "docker-build": "bash scripts/build.sh ''",
+        "docker-build-lowest": "bash scripts/build.sh --prefer-lowest",
+        "docker-test": "bash scripts/boot.sh ''",
+        "docker-test-lowest": "bash scripts/boot.sh --prefer-lowest",
+        "docker-test-build": "composer docker-build",
+        "docker-test-lowest-build": "composer docker-build-lowest",
+        "docker-test-all": [
+            "bash scripts/boot-all.sh --prefer-lowest",
+            "bash scripts/boot-all.sh"
+        ],
+        "docker-test-both" : [
+            "composer docker-test-lowest",
+            "composer docker-test"
+        ],
+        "down": "bash scripts/down.sh",
+        "update-test": [
+            "composer --prefer-stable update",
+            "composer test",
+            "composer update --prefer-lowest",
+            "composer test",
+            "composer update"
+        ]
     },
     "config": {
         "sort-packages": true

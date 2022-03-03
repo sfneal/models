@@ -36,7 +36,7 @@ class QueryBuilder extends EloquentBuilder
     /**
      * UserBuilder constructor.
      *
-     * @param Builder $query
+     * @param  Builder  $query
      */
     public function __construct(Builder $query)
     {
@@ -61,9 +61,9 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Retrieve a concatenation string that combines two columns in a table into a single column.
      *
-     * @param string $column1
-     * @param string $column2
-     * @param string $delimiter
+     * @param  string  $column1
+     * @param  string  $column2
+     * @param  string  $delimiter
      * @return string
      */
     protected function concatColumns(string $column1, string $column2, string $delimiter = ' '): string
@@ -86,9 +86,9 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Retrieve a MySQL if statement that can be used within a query.
      *
-     * @param string $condition
-     * @param string $expr_true
-     * @param string $expr_false
+     * @param  string  $condition
+     * @param  string  $expr_true
+     * @param  string  $expr_false
      * @return string
      */
     protected function ifStatement(string $condition, string $expr_true, string $expr_false): string
@@ -107,10 +107,10 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Wildcard where like query to determine if any part of the value is found.
      *
-     * @param string $column
+     * @param  string  $column
      * @param $value
-     * @param bool $leadingWildcard
-     * @param bool $trailingWildcard
+     * @param  bool  $leadingWildcard
+     * @param  bool  $trailingWildcard
      * @return $this
      */
     public function whereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard = true): self
@@ -127,10 +127,10 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Wildcard or where like query to determine if any part of the value is found.
      *
-     * @param string $column
+     * @param  string  $column
      * @param $value
-     * @param bool $leadingWildcard
-     * @param bool $trailingWildcard
+     * @param  bool  $leadingWildcard
+     * @param  bool  $trailingWildcard
      * @return $this
      */
     public function orWhereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard = true): self
@@ -147,7 +147,7 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Retrieve a flat, single-dimensional array of results without keys.
      *
-     * @param string $column
+     * @param  string  $column
      * @return array
      */
     public function getFlatArray(string $column): array
@@ -160,7 +160,7 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Retrieve raw query results formatted for Ajax select2 form inputs.
      *
-     * @param string|null $raw
+     * @param  string|null  $raw
      * @return $this
      */
     public function selectRawJson(string $raw = null): self
@@ -174,7 +174,7 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Order query results by the 'created_at' column.
      *
-     * @param string $direction
+     * @param  string  $direction
      * @return $this
      */
     public function orderByCreatedAt(string $direction = 'desc'): self
@@ -187,7 +187,7 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Retrieve the 'next' Model in the database.
      *
-     * @param int|null $model_id
+     * @param  int|null  $model_id
      * @return QueryBuilder|Collection|Model|null
      */
     public function getNextModel(int $model_id = null)
@@ -198,7 +198,7 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Retrieve the 'previous' Model in the database.
      *
-     * @param int|null $model_id
+     * @param  int|null  $model_id
      * @return QueryBuilder|Collection|Model|null
      */
     public function getPreviousModel(int $model_id = null)
@@ -209,7 +209,7 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Retrieve the 'next' Model's ID.
      *
-     * @param int|null $model_id
+     * @param  int|null  $model_id
      * @return mixed
      */
     public function getNextModelId(int $model_id = null)
@@ -222,7 +222,7 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Retrieve the 'previous' Model's ID.
      *
-     * @param int|null $model_id
+     * @param  int|null  $model_id
      * @return mixed
      */
     public function getPreviousModelId(int $model_id = null)

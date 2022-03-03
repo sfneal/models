@@ -169,3 +169,8 @@ All notable changes to `models` will be documented in this file
 
 ## 2.8.1 - 2021-09-07
 - fix issue use of 'IFF' Sqlite function `QueryBuilder::ifStatement()` by replacing with use of 'CASE'
+
+
+## 2.8.2 - 2022-03-03
+- bump composer dependency constraints
+- add use of GitHub actions/workflows

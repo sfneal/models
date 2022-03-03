@@ -23,6 +23,7 @@ abstract class Model extends EloquentModel
 
     /**
      * Query Builder.
+     *
      * @param $query
      * @return QueryBuilder
      */
@@ -95,8 +96,8 @@ abstract class Model extends EloquentModel
      *  - Optionally determine if the attribute is fillable.
      *  - Allows $attr to be null for conditionals where a column may not exist
      *
-     * @param string|null $attr
-     * @param bool $is_fillable
+     * @param  string|null  $attr
+     * @param  bool  $is_fillable
      * @return bool
      */
     public function hasAttribute(string $attr = null, bool $is_fillable = false): bool
@@ -111,7 +112,7 @@ abstract class Model extends EloquentModel
     /**
      * Determine if a model has attribute that is also null.
      *
-     * @param string $attr
+     * @param  string  $attr
      * @return bool
      */
     public function hasNullAttribute(string $attr): bool
@@ -220,7 +221,7 @@ abstract class Model extends EloquentModel
     /**
      * Retrieve the 'timestampFormatForHumans' property.
      *
-     * @param int $stringToTime
+     * @param  int  $stringToTime
      * @return string
      */
     protected function getDatetimeForHumans(int $stringToTime): string

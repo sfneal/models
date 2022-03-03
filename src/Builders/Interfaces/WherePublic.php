@@ -7,7 +7,7 @@ interface WherePublic
     /**
      * Scope query results to only results that are public.
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function wherePublic(int $value = 1): self;

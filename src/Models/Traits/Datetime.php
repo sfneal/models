@@ -7,8 +7,8 @@ trait Datetime
     /**
      * Format a datetime string.
      *
-     * @param string $format
-     * @param string|null $datetime
+     * @param  string  $format
+     * @param  string|null  $datetime
      * @return string
      */
     private static function datetime(string $format, string $datetime = null): string

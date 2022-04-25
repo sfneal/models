@@ -25,11 +25,11 @@ trait HasCompositePrimaryKey
     protected function setKeysForSaveQuery($query): Builder
     {
         $keys = $this->getKeyName();
-        if(!is_array($keys)){
+        if (! is_array($keys)) {
             return parent::setKeysForSaveQuery($query);
         }
 
-        foreach($keys as $keyName){
+        foreach ($keys as $keyName) {
             $query->where($keyName, '=', $this->getKeyForSaveQuery($keyName));
         }
 
@@ -39,12 +39,12 @@ trait HasCompositePrimaryKey
     /**
      * Get the primary key value for a save query.
      *
-     * @param string|null $keyName
+     * @param  string|null  $keyName
      * @return mixed
      */
     protected function getKeyForSaveQuery(string $keyName = null): mixed
     {
-        if(is_null($keyName)){
+        if (is_null($keyName)) {
             $keyName = $this->getKeyName();
         }
 

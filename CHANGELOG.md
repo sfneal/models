@@ -174,3 +174,7 @@ All notable changes to `models` will be documented in this file
 ## 2.8.2 - 2022-03-03
 - bump composer dependency constraints
 - add use of GitHub actions/workflows
+
+ 
+## 2.9.0 - 2022-04-25
+- add `HasCompositePrimaryKey` trait for use in pivot models with composite primary keys

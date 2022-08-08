@@ -178,3 +178,7 @@ All notable changes to `models` will be documented in this file
  
 ## 2.9.0 - 2022-04-25
 - add `HasCompositePrimaryKey` trait for use in pivot models with composite primary keys
+
+
+## 2.10.0 - 2022-08-08
+- add a $boolean param to `QueryBuilder::whereLike()`

@@ -107,18 +107,24 @@ class QueryBuilder extends EloquentBuilder
     /**
      * Wildcard where like query to determine if any part of the value is found.
      *
-     * @param  string  $column
+     * @param string $column
      * @param $value
-     * @param  bool  $leadingWildcard
-     * @param  bool  $trailingWildcard
+     * @param bool $leadingWildcard
+     * @param bool $trailingWildcard
+     * @param string $boolean
      * @return $this
      */
-    public function whereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard = true): self
+    public function whereLike(string $column,
+                                     $value,
+                              bool   $leadingWildcard = true,
+                              bool   $trailingWildcard = true,
+                              string $boolean = 'and'): self
     {
         $this->where(
             $column,
             'LIKE',
-            ($leadingWildcard ? '%' : '').$value.($trailingWildcard ? '%' : '')
+            ($leadingWildcard ? '%' : '').$value.($trailingWildcard ? '%' : ''),
+            $boolean
         );
 
         return $this;

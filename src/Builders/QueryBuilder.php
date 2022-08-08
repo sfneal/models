@@ -111,14 +111,20 @@ class QueryBuilder extends EloquentBuilder
      * @param $value
      * @param  bool  $leadingWildcard
      * @param  bool  $trailingWildcard
+     * @param  string  $boolean
      * @return $this
      */
-    public function whereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard = true): self
+    public function whereLike(string $column,
+                                     $value,
+                              bool $leadingWildcard = true,
+                              bool $trailingWildcard = true,
+                              string $boolean = 'and'): self
     {
         $this->where(
             $column,
             'LIKE',
-            ($leadingWildcard ? '%' : '').$value.($trailingWildcard ? '%' : '')
+            ($leadingWildcard ? '%' : '').$value.($trailingWildcard ? '%' : ''),
+            $boolean
         );
 
         return $this;

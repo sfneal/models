@@ -57,4 +57,14 @@ class WhereLikeTest extends SeededTestCase
             ->orWhereLike('name_first', 'Richard');
         $this->whereLikeAssertions($query);
     }
+
+    /** @test */
+    public function orWhereBool()
+    {
+        // Basic usage
+        $query = People::query()
+            ->whereLike('name_first', 'Stephen', true, true, 'or')
+            ->whereLike('name_first', 'Richard', true, true, 'or');
+        $this->whereLikeAssertions($query);
+    }
 }

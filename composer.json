@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^8.0",
         "illuminate/database": ">=8.2",
         "sfneal/actions": "^2.0",
         "sfneal/laravel-helpers": "^2.0",

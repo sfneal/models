@@ -25,8 +25,8 @@
     },
     "require-dev": {
         "laravel/legacy-factories": ">=1.1.0",
-        "orchestra/testbench": "^6.24.1|^7.0",
-        "phpunit/phpunit": "^9.3",
+        "orchestra/testbench": "^7.40",
+        "phpunit/phpunit": "^9.6",
         "sfneal/array-helpers": "^3.0",
         "scrutinizer/ocular": "^1.8"
     },

@@ -12,7 +12,7 @@ class WhereBetweenSplitterTest extends SeededTestCase
     /**
      * @return array
      */
-    public function ageRangeProvider(): array
+    public static function ageRangeProvider(): array
     {
         $ranges = [
             [rand(21, 70), rand(21, 70)],

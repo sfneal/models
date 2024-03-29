@@ -12,7 +12,7 @@ class WhereLikeTest extends SeededTestCase
     /**
      * @return array[]
      */
-    public function queryParamProvider(): array
+    public static function queryParamProvider(): array
     {
         return [
             ['name_last', 'Neal', true, true],

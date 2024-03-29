@@ -183,5 +183,6 @@ All notable changes to `models` will be documented in this file
 ## 2.10.0 - 2022-08-08
 - add a $boolean param to `QueryBuilder::whereLike()`
 
+
 ## 3.0.0 - 2024-03-30 (unreleased)
 - remove support for PHP 7

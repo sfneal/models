@@ -108,7 +108,7 @@ class QueryBuilder extends EloquentBuilder
      * Wildcard where like query to determine if any part of the value is found.
      *
      * @param  string  $column
-     * @param $value
+     * @param  $value
      * @param  bool  $leadingWildcard
      * @param  bool  $trailingWildcard
      * @param  string  $boolean
@@ -134,7 +134,7 @@ class QueryBuilder extends EloquentBuilder
      * Wildcard or where like query to determine if any part of the value is found.
      *
      * @param  string  $column
-     * @param $value
+     * @param  $value
      * @param  bool  $leadingWildcard
      * @param  bool  $trailingWildcard
      * @return $this

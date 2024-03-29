@@ -11,8 +11,8 @@ use Sfneal\Models\Tests\SeededTestCase;
 class WherePublicStatusTest extends SeededTestCase
 {
     /**
-     * @param $query
-     * @param $value
+     * @param  $query
+     * @param  $value
      */
     private function executeAssertions($query, $value): void
     {

@@ -48,7 +48,7 @@ class People extends ModelWithPublicStatus
     /**
      * Query Builder.
      *
-     * @param $query
+     * @param  $query
      * @return PeopleBuilder
      */
     public function newEloquentBuilder($query)

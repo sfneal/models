@@ -24,7 +24,7 @@ abstract class Model extends EloquentModel
     /**
      * Query Builder.
      *
-     * @param $query
+     * @param  $query
      * @return QueryBuilder
      */
     public function newEloquentBuilder($query)

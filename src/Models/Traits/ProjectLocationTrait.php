@@ -21,7 +21,7 @@ trait ProjectLocationTrait
     /**
      * Parse project_location attribute into city and state values.
      *
-     * @param $value
+     * @param  $value
      */
     public function setProjectLocationAttribute($value)
     {

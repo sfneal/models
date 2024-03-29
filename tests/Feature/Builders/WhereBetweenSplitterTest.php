@@ -35,6 +35,7 @@ class WhereBetweenSplitterTest extends SeededTestCase
 
     /**
      * @test
+     *
      * @dataProvider ageRangeProvider
      */
     public function whereBetweenSplitter(int $min, int $max, $range)

@@ -186,3 +186,4 @@ All notable changes to `models` will be documented in this file
 
 ## 3.0.0 - 2024-03-30 (unreleased)
 - remove support for PHP 7
+- add support for PHP 8.2 & 8.3

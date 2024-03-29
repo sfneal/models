@@ -26,7 +26,6 @@ class WhereLikeTest extends SeededTestCase
      */
     private function whereLikeAssertions(QueryBuilder $query)
     {
-        $this->assertTrue($query instanceof QueryBuilder);
         $this->assertTrue($query instanceof PeopleBuilder);
         $this->assertSame($query->count(), 2);
         $this->assertTrue(in_array('Stephen', $query->getFlatArray('name_first')));

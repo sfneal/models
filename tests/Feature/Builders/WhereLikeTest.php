@@ -35,10 +35,11 @@ class WhereLikeTest extends SeededTestCase
 
     /**
      * @test
+     *
      * @dataProvider queryParamProvider
      *
      * @param  string  $column
-     * @param $value
+     * @param  $value
      * @param  bool  $leadingWildcard
      * @param  bool  $trailingWildcard
      */

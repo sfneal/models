@@ -47,7 +47,7 @@ trait WhereBetweenSplitter
      *  - $values is not a string
      *  - $sep is found not in $values
      *
-     * @param $values
+     * @param  $values
      * @param  string  $sep
      * @return bool
      */
@@ -59,7 +59,7 @@ trait WhereBetweenSplitter
     /**
      * Determine if the values are valid for use in standard 'whereBetween' clause.
      *
-     * @param $values
+     * @param  $values
      * @return bool
      */
     private static function isArrayValue($values): bool

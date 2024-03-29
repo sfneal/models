@@ -38,7 +38,7 @@ docker-compose down -v --remove-orphans
 
 # Build the image
 echo "Building image: stephenneal/models:${TAG}"
-docker build -t stephenneal/models:"${TAG}" \
+docker build -t stephenneal/models:"${TAG}" -t stephenneal/models:latest \
     --build-arg php_composer_tag="${PHP_COMPOSER_TAG}" \
     --build-arg composer_flags="${COMPOSER_FLAGS}" \
      .

@@ -121,7 +121,7 @@ abstract class Model extends EloquentModel
         // Determine that the attribute exists and weather it is fillable
         return
             array_key_exists($key, $this->attributesToArray()) &&
-            (in_array($key, $this->getFillable()));
+            in_array($key, $this->getFillable());
     }
 
     /**

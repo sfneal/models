@@ -5,7 +5,7 @@ namespace Sfneal\Models\Traits;
 /**
  * Trait PublicStatus.
  *
- * @property $public_status
+ * @property int $public_status
  */
 trait PublicStatusTrait
 {

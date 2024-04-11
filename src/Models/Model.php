@@ -2,6 +2,7 @@
 
 namespace Sfneal\Models;
 
+use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Traits\UploadDirectory;
 
+#[\AllowDynamicProperties]
 abstract class Model extends EloquentModel
 {
     use SoftDeletes;
@@ -63,11 +65,11 @@ abstract class Model extends EloquentModel
      */
     public function isNew(): bool
     {
-        if (empty($this->created_at)) {
+        if (empty($this->attributes['created_at'])) {
             return false;
         }
 
-        return strtotime($this->created_at) >= strtotime('-'.self::IS_NEW_MAX_HOURS.' hours');
+        return strtotime($this->attributes['created_at']) >= strtotime('-'.self::IS_NEW_MAX_HOURS.' hours');
     }
 
     /**
@@ -77,7 +79,7 @@ abstract class Model extends EloquentModel
      */
     public function howNew(): float
     {
-        return round((time() - strtotime($this->created_at)) / (60 * 60 * 24));
+        return round((time() - strtotime($this->attributes['created_at'])) / (60 * 60 * 24));
     }
 
     /**
@@ -147,7 +149,8 @@ abstract class Model extends EloquentModel
      */
     public static function getTableName()
     {
-        return with(new static)->getTable();
+        /** @phpstan-ignore-next-line */
+        return (new static)->getTable();
     }
 
     /**
@@ -157,7 +160,8 @@ abstract class Model extends EloquentModel
      */
     public static function getPrimaryKeyName()
     {
-        return with(new static)->getKeyName();
+        /** @phpstan-ignore-next-line */
+        return (new static)->getKeyName();
     }
 
     /**
@@ -187,7 +191,15 @@ abstract class Model extends EloquentModel
      */
     public function wasDeleted(): bool
     {
-        return ! $this->exists || ! is_null($this->deleted_at);
+        if (! $this->exists) {
+            return true;
+        }
+
+        if (array_key_exists('deleted_at', $this->attributesToArray())) {
+            return ! is_null($this->attributes['deleted_at']);
+        }
+
+        return false;
     }
 
     /**
@@ -236,7 +248,7 @@ abstract class Model extends EloquentModel
      */
     public function getDatetimeAttribute(): string
     {
-        return date('Y-m-d h:i a', strtotime($this->created_at));
+        return date('Y-m-d h:i a', strtotime($this->attributes['created_at']));
     }
 
     /**
@@ -248,7 +260,7 @@ abstract class Model extends EloquentModel
      */
     public function getCreatedTimestampAttribute(): string
     {
-        return date($this->getTimestampFormat(), strtotime($this->created_at));
+        return date($this->getTimestampFormat(), strtotime($this->attributes['created_at']));
     }
 
     /**
@@ -260,7 +272,7 @@ abstract class Model extends EloquentModel
      */
     public function getCreatedForHumansAttribute(): string
     {
-        return $this->getDatetimeForHumans(strtotime($this->created_at));
+        return $this->getDatetimeForHumans(strtotime($this->attributes['created_at']));
     }
 
     /**
@@ -272,7 +284,7 @@ abstract class Model extends EloquentModel
      */
     public function getCreatedDiffForHumansAttribute(): string
     {
-        return $this->created_at->diffForHumans();
+        return (new Carbon($this->attributes['created_at']))->diffForHumans();
     }
 
     /**
@@ -282,7 +294,7 @@ abstract class Model extends EloquentModel
      */
     public function getCreatedDateAttribute(): string
     {
-        return date('Y-m-d', strtotime($this->created_at));
+        return date('Y-m-d', strtotime($this->attributes['created_at']));
     }
 
     /**
@@ -292,7 +304,7 @@ abstract class Model extends EloquentModel
      */
     public function getCreatedTimeAttribute(): string
     {
-        return date('h:i A', strtotime($this->created_at));
+        return date('h:i A', strtotime($this->attributes['created_at']));
     }
 
     /**
@@ -304,7 +316,7 @@ abstract class Model extends EloquentModel
      */
     public function getUpdatedTimestampAttribute(): string
     {
-        return date($this->getTimestampFormat(), strtotime($this->updated_at));
+        return date($this->getTimestampFormat(), strtotime($this->attributes['updated_at']));
     }
 
     /**
@@ -316,7 +328,7 @@ abstract class Model extends EloquentModel
      */
     public function getUpdatedForHumansAttribute(): string
     {
-        return $this->getDatetimeForHumans(strtotime($this->updated_at));
+        return $this->getDatetimeForHumans(strtotime($this->attributes['updated_at']));
     }
 
     /**
@@ -328,7 +340,7 @@ abstract class Model extends EloquentModel
      */
     public function getUpdatedDiffForHumansAttribute(): string
     {
-        return $this->updated_at->diffForHumans();
+        return (new Carbon($this->attributes['updated_at']))->diffForHumans();
     }
 
     /**
@@ -338,7 +350,7 @@ abstract class Model extends EloquentModel
      */
     public function getUpdatedDateAttribute(): string
     {
-        return date('Y-m-d', strtotime($this->updated_at));
+        return date('Y-m-d', strtotime($this->attributes['updated_at']));
     }
 
     /**
@@ -348,6 +360,6 @@ abstract class Model extends EloquentModel
      */
     public function getUpdatedTimeAttribute(): string
     {
-        return date('h:i A', strtotime($this->updated_at));
+        return date('h:i A', strtotime($this->attributes['updated_at']));
     }
 }

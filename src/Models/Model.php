@@ -122,7 +122,7 @@ abstract class Model extends EloquentModel
         return
             isset($key) &&
             array_key_exists($key, $this->attributesToArray()) &&
-            (in_array($key, $this->getFillable()));
+            in_array($key, $this->getFillable());
     }
 
     /**

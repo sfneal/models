@@ -104,7 +104,7 @@ abstract class Model extends EloquentModel
     public function hasAttribute($key): bool
     {
         // Determine that the attribute exists
-        return isset($key) && array_key_exists($key, $this->attributesToArray());
+        return array_key_exists($key, $this->attributesToArray());
     }
 
     /**
@@ -120,7 +120,6 @@ abstract class Model extends EloquentModel
     {
         // Determine that the attribute exists and weather it is fillable
         return
-            isset($key) &&
             array_key_exists($key, $this->attributesToArray()) &&
             (in_array($key, $this->getFillable()));
     }

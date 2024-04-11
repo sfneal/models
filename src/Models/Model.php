@@ -98,17 +98,31 @@ abstract class Model extends EloquentModel
      *  - Optionally determine if the attribute is fillable.
      *  - Allows $attr to be null for conditionals where a column may not exist
      *
-     * @param  string|null  $attr
-     * @param  bool  $is_fillable
+     * @param  string  $key
      * @return bool
      */
-    public function hasAttribute(string $attr = null, bool $is_fillable = false): bool
+    public function hasAttribute($key): bool
     {
-        // Determine that the attribute exists and optionally weather it is fillable
+        // Determine that the attribute exists
+        return isset($key) && array_key_exists($key, $this->attributesToArray());
+    }
+
+    /**
+     * Determine if a model has an attribute.
+     *
+     *  - Optionally determine if the attribute is fillable.
+     *  - Allows $attr to be null for conditionals where a column may not exist
+     *
+     * @param  string  $key
+     * @return bool
+     */
+    public function hasAttributeFillable($key): bool
+    {
+        // Determine that the attribute exists and weather it is fillable
         return
-            isset($attr) &&
-            array_key_exists($attr, $this->attributesToArray()) &&
-            (! $is_fillable || in_array($attr, $this->getFillable()));
+            isset($key) &&
+            array_key_exists($key, $this->attributesToArray()) &&
+            (in_array($key, $this->getFillable()));
     }
 
     /**

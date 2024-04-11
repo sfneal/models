@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Traits\UploadDirectory;
 
+#[\AllowDynamicProperties]
 abstract class Model extends EloquentModel
 {
     use SoftDeletes;

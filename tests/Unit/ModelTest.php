@@ -31,22 +31,22 @@ class ModelTest extends ModelTestCase
     /** @test */
     public function hasAttribute()
     {
-        $this->assertTrue($this->model->hasAttribute('name_first', true));
-        $this->assertTrue($this->model->hasAttribute('name_last', true));
-        $this->assertTrue($this->model->hasAttribute('email', true));
-        $this->assertTrue($this->model->hasAttribute('age', true));
-        $this->assertTrue($this->model->hasAttribute('address', true));
-        $this->assertTrue($this->model->hasAttribute('city', true));
-        $this->assertTrue($this->model->hasAttribute('state', true));
-        $this->assertTrue($this->model->hasAttribute('zip', true));
-        $this->assertTrue($this->model->hasAttribute('public_status', true));
+        $this->assertTrue($this->model->hasAttribute('name_first'));
+        $this->assertTrue($this->model->hasAttribute('name_last'));
+        $this->assertTrue($this->model->hasAttribute('email'));
+        $this->assertTrue($this->model->hasAttribute('age'));
+        $this->assertTrue($this->model->hasAttribute('address'));
+        $this->assertTrue($this->model->hasAttribute('city'));
+        $this->assertTrue($this->model->hasAttribute('state'));
+        $this->assertTrue($this->model->hasAttribute('zip'));
+        $this->assertTrue($this->model->hasAttribute('public_status'));
 
-        $this->assertFalse($this->model->hasAttribute('name_full', false));
-        $this->assertFalse($this->model->hasAttribute('name_last_first', false));
-        $this->assertFalse($this->model->hasAttribute('address_full', false));
-        $this->assertFalse($this->model->hasAttribute('address_latest', false));
-        $this->assertFalse($this->model->hasAttribute('name_full_with_suffix', false));
-        $this->assertFalse($this->model->hasAttribute('address_city', false));
+        $this->assertFalse($this->model->hasAttributeFillable('name_full'));
+        $this->assertFalse($this->model->hasAttributeFillable('name_last_first'));
+        $this->assertFalse($this->model->hasAttributeFillable('address_full'));
+        $this->assertFalse($this->model->hasAttributeFillable('address_latest'));
+        $this->assertFalse($this->model->hasAttributeFillable('name_full_with_suffix'));
+        $this->assertFalse($this->model->hasAttributeFillable('address_city'));
     }
 
     /** @test */

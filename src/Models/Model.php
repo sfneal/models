@@ -148,7 +148,7 @@ abstract class Model extends EloquentModel
      */
     public static function getTableName()
     {
-        return with(new static)->getTable();
+        return (new static)->getTable();
     }
 
     /**
@@ -158,7 +158,7 @@ abstract class Model extends EloquentModel
      */
     public static function getPrimaryKeyName()
     {
-        return with(new static)->getKeyName();
+        return (new static)->getKeyName();
     }
 
     /**

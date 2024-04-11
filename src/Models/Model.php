@@ -149,6 +149,7 @@ abstract class Model extends EloquentModel
      */
     public static function getTableName()
     {
+        /** @phpstan-ignore-next-line */
         return (new static)->getTable();
     }
 
@@ -159,6 +160,7 @@ abstract class Model extends EloquentModel
      */
     public static function getPrimaryKeyName()
     {
+        /** @phpstan-ignore-next-line */
         return (new static)->getKeyName();
     }
 

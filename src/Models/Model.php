@@ -208,7 +208,7 @@ abstract class Model extends EloquentModel
             return true;
         }
 
-        if (array_key_exists('deleted_at', $this->attributesToArray())) {
+        if (array_key_exists('deleted_at', $this->attributes)) {
             return ! is_null($this->attributes['deleted_at']);
         }
 

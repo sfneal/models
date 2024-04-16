@@ -188,3 +188,7 @@ All notable changes to `models` will be documented in this file
 - remove support for PHP 7
 - add support for PHP 8.2 & 8.3
 - bump test suite frameworks to latest usable versions
+
+
+## 3.0.1 - 2024-04-15
+- fix issue with `Model::wasDeleted()` method

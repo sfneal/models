@@ -20,7 +20,7 @@
         "illuminate/database": ">=8.2",
         "sfneal/actions": "^2.0",
         "sfneal/laravel-helpers": "^2.0",
-        "sfneal/redis-helpers": "^1.2|^2.0",
+        "sfneal/redis-helpers": "^1.2|^2.0|^3.0",
         "sfneal/string-helpers": ">=1.1.4"
     },
     "require-dev": {

@@ -2,6 +2,8 @@
 
 namespace Sfneal\Models\Tests\Feature\Builders;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
 use Sfneal\Models\Tests\Assets\Models\People;
@@ -33,11 +35,8 @@ class WhereBetweenSplitterTest extends SeededTestCase
         return $data;
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider ageRangeProvider
-     */
+    #[Test]
+    #[DataProvider('ageRangeProvider')]
     public function whereBetweenSplitter(int $min, int $max, $range)
     {
         $query = People::query()->whereBetweenSplitter('age', $range);

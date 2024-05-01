@@ -2,7 +2,6 @@
 
 namespace Sfneal\Models\Tests\Feature\Builders;
 
-use Exception;
 use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Models\Tests\Assets\Models\People;
 use Sfneal\Models\Tests\SeededTestCase;
@@ -43,11 +42,7 @@ class QueryBuilderTest extends SeededTestCase
         $this->assertSame($output, $expected);
     }
 
-    /**
-     * @test
-     *
-     * @throws Exception
-     */
+    #[Test]
     public function getNextModel()
     {
         // Prevent randomly selecting the last item which has no 'next' model
@@ -61,11 +56,7 @@ class QueryBuilderTest extends SeededTestCase
         $this->assertSame($nextModel->person_id - 1, $model->person_id);
     }
 
-    /**
-     * @test
-     *
-     * @throws Exception
-     */
+    #[Test]
     public function getPreviousModel()
     {
         // Prevent randomly selecting the first model that doesn't have a 'previous' model

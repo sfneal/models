@@ -2,6 +2,7 @@
 
 namespace Sfneal\Models\Tests\Feature\Builders;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
@@ -33,16 +34,8 @@ class WhereLikeTest extends SeededTestCase
         $this->assertTrue(in_array('Richard', $query->getFlatArray('name_first')));
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider queryParamProvider
-     *
-     * @param  string  $column
-     * @param  $value
-     * @param  bool  $leadingWildcard
-     * @param  bool  $trailingWildcard
-     */
+    #[Test]
+    #[DataProvider('queryParamProvider')]
     public function whereLike(string $column, $value, bool $leadingWildcard = true, bool $trailingWildcard = true)
     {
         $query = People::query()->whereLike($column, $value, $leadingWildcard, $trailingWildcard);

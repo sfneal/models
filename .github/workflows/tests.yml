@@ -14,9 +14,10 @@ jobs:
             matrix:
                 os: [ubuntu-latest]
                 php: [8.0, 8.1, 8.2, 8.3]
+                laravel: [8.0, 9.0, 10.0, 11.0]
                 dependency-version: [prefer-lowest, prefer-stable]
 
-        name: PHP ${{ matrix.php }} - ${{ matrix.dependency-version }}
+        name: PHP ${{ matrix.php }} - Laravel v${{ matrix.dependency-version }} - ${{ matrix.dependency-version }}
 
         steps:
             -   name: Checkout code
@@ -31,6 +32,10 @@ jobs:
             -   name: Install Composer Dependencies
                 run: |
                     composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+
+            -   name: Install Laravel
+                run: |
+                    composer require laravel/framework:^${{ matrix.dev-dependencies }} --${{ matrix.dev-dependencies }} --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
             -   name: Execute tests
                 run: composer test

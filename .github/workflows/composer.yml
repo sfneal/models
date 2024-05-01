@@ -27,11 +27,10 @@ jobs:
                     php-version: ${{ matrix.php }}
                     coverage: none
 
-            -   name: Install Composer Dependencies
-                run: |
-                    composer update --${{ matrix.dev-dependencies }} --${{ matrix.dependency-version }} --prefer-dist --no-interaction
-
             -   name: Install Laravel
                 run: |
                     composer require "laravel/framework:^${{ matrix.laravel }}" --prefer-dist --no-interaction
 
+            -   name: Install Composer Dependencies
+                run: |
+                    composer update --${{ matrix.dev-dependencies }} --${{ matrix.dependency-version }} --prefer-dist --no-interaction

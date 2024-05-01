@@ -4,6 +4,7 @@ namespace Sfneal\Models\Tests\Assets\Models;
 
 use Database\Factories\PeopleFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Sfneal\Models\ModelWithPublicStatus;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
@@ -33,6 +34,12 @@ class People extends ModelWithPublicStatus
         'state',
         'zip',
         'public_status',
+    ];
+
+    protected $appends = [
+        'name_full',
+        'name_last_first',
+        'address_full'
     ];
 
     /**
@@ -68,21 +75,26 @@ class People extends ModelWithPublicStatus
 
     public function getNameFullAttribute(): string
     {
-        return "{$this->name_first} {$this->name_last}";
+        return $this->attributes['name_first'] . ' ' . $this->attributes['name_last'];
     }
 
     public function getNameLastFirstAttribute(): string
     {
-        return "{$this->name_last}, {$this->name_first}";
+        return $this->attributes['name_last'] . ', ' . $this->attributes['name_first'];
     }
 
     public function getAddressFullAttribute(): string
     {
-        return "{$this->address}, {$this->city}, {$this->state} {$this->zip}";
+        return $this->attributes['address']
+            . ', ' . $this->attributes['city']
+            . ', ' . $this->attributes['state']
+            . ' ' . $this->attributes['zip'];
     }
 
-    public function getAgeAttribute($value): int
+    public function age(): Attribute
     {
-        return intval($value);
+        return Attribute::make(
+            get: fn ($value) => intval($value)
+        );
     }
 }

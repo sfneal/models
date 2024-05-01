@@ -17,7 +17,7 @@ jobs:
                 laravel: [8.0, 9.0, 10.0, 11.0]
                 dependency-version: [prefer-lowest, prefer-stable]
 
-        name: PHP ${{ matrix.php }} - Laravel v${{ matrix.dependency-version }} - ${{ matrix.dependency-version }}
+        name: PHP ${{ matrix.php }} - Laravel v${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
         steps:
             -   name: Checkout code
@@ -35,7 +35,7 @@ jobs:
 
             -   name: Install Laravel
                 run: |
-                    composer require laravel/framework:^${{ matrix.dev-dependencies }} --${{ matrix.dev-dependencies }} --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+                    composer require laravel/framework:^${{ matrix.laravel }} --${{ matrix.dev-dependencies }} --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
             -   name: Execute tests
                 run: composer test

@@ -39,7 +39,7 @@ class People extends ModelWithPublicStatus
     protected $appends = [
         'name_full',
         'name_last_first',
-        'address_full'
+        'address_full',
     ];
 
     /**
@@ -75,20 +75,20 @@ class People extends ModelWithPublicStatus
 
     public function getNameFullAttribute(): string
     {
-        return $this->attributes['name_first'] . ' ' . $this->attributes['name_last'];
+        return $this->attributes['name_first'].' '.$this->attributes['name_last'];
     }
 
     public function getNameLastFirstAttribute(): string
     {
-        return $this->attributes['name_last'] . ', ' . $this->attributes['name_first'];
+        return $this->attributes['name_last'].', '.$this->attributes['name_first'];
     }
 
     public function getAddressFullAttribute(): string
     {
         return $this->attributes['address']
-            . ', ' . $this->attributes['city']
-            . ', ' . $this->attributes['state']
-            . ' ' . $this->attributes['zip'];
+            .', '.$this->attributes['city']
+            .', '.$this->attributes['state']
+            .' '.$this->attributes['zip'];
     }
 
     public function age(): Attribute

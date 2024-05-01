@@ -2,6 +2,7 @@
 
 namespace Sfneal\Models\Tests\Feature\Builders;
 
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Helpers\Arrays\ArrayHelpers;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
@@ -24,13 +25,13 @@ class WherePublicStatusTest extends SeededTestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function wherePublic()
     {
         $this->executeAssertions(People::query()->wherePublic(), 1);
     }
 
-    /** @test */
+    #[Test]
     public function wherePrivate()
     {
         $this->executeAssertions(People::query()->wherePrivate(), 0);

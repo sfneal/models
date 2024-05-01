@@ -2,6 +2,7 @@
 
 namespace Sfneal\Models\Tests\Feature;
 
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Models\Actions\ResolveModelName;
 use Sfneal\Models\Tests\Assets\Models\CompanyPeople;
 use Sfneal\Models\Tests\Assets\Models\People;
@@ -9,7 +10,7 @@ use Sfneal\Models\Tests\ModelTestCase;
 
 class ResolveModelNameTest extends ModelTestCase
 {
-    /** @test */
+    #[Test]
     public function resolvePeopleModelName()
     {
         $expected = 'People';
@@ -19,7 +20,7 @@ class ResolveModelNameTest extends ModelTestCase
         $this->assertEquals($expected, $output);
     }
 
-    /** @test */
+    #[Test]
     public function resolveClassModelName()
     {
         $expected = 'People';
@@ -29,7 +30,7 @@ class ResolveModelNameTest extends ModelTestCase
         $this->assertEquals($expected, $output);
     }
 
-    /** @test */
+    #[Test]
     public function resolveCompanyPeopleModelName()
     {
         $model = CompanyPeople::factory()->make();

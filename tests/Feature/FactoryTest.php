@@ -2,11 +2,12 @@
 
 namespace Sfneal\Models\Tests\Feature;
 
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Models\Tests\ModelTestCase;
 
 class FactoryTest extends ModelTestCase
 {
-    /** @test */
+    #[Test]
     public function fillables_are_correct_types()
     {
         $this->assertIsString($this->model->name_first);
@@ -19,7 +20,7 @@ class FactoryTest extends ModelTestCase
         $this->assertIsString($this->model->zip);
     }
 
-    /** @test */
+    #[Test]
     public function attributes_are_correct_types()
     {
         // Age

@@ -2,23 +2,24 @@
 
 namespace Sfneal\Models\Tests\Unit;
 
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Models\Tests\ModelTestCase;
 
 class ModelTest extends ModelTestCase
 {
-    /** @test */
+    #[Test]
     public function isNew()
     {
         $this->assertTrue($this->model->isNew());
     }
 
-    /** @test */
+    #[Test]
     public function howNew()
     {
         $this->assertIsFloat($this->model->howNew());
     }
 
-    /** @test */
+    #[Test]
     public function getIsNewColumn()
     {
         $expected = 'created_at';
@@ -28,7 +29,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($expected, $actual);
     }
 
-    /** @test */
+    #[Test]
     public function hasAttribute()
     {
         $this->assertTrue($this->model->hasAttribute('name_first'));
@@ -49,7 +50,7 @@ class ModelTest extends ModelTestCase
         $this->assertFalse($this->model->hasAttributeFillable('address_city'));
     }
 
-    /** @test */
+    #[Test]
     public function hasNullAttribute()
     {
         $this->assertFalse($this->model->hasNullAttribute('name_first'));
@@ -63,7 +64,7 @@ class ModelTest extends ModelTestCase
         $this->assertFalse($this->model->hasNullAttribute('public_status'));
     }
 
-    /** @test */
+    #[Test]
     public function getIdHashAttribute()
     {
         $expected = crc32($this->model->getKey());
@@ -74,14 +75,14 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->idHash());
     }
 
-    /** @test */
+    #[Test]
     public function getLabel()
     {
         $label = $this->model->getLabel();
         $this->assertSame($label, $this->model->getKey());
     }
 
-    /** @test */
+    #[Test]
     public function getTableName()
     {
         $tableName = $this->model->getTableName();
@@ -89,7 +90,7 @@ class ModelTest extends ModelTestCase
         $this->assertTrue($tableName == 'people');
     }
 
-    /** @test */
+    #[Test]
     public function getPrimaryKeyName()
     {
         $primaryKey = $this->model->getPrimaryKeyName();
@@ -97,7 +98,7 @@ class ModelTest extends ModelTestCase
         $this->assertTrue($primaryKey == 'person_id');
     }
 
-    /** @test */
+    #[Test]
     public function wasCreated()
     {
         $actual = $this->model->wasCreated();
@@ -106,7 +107,7 @@ class ModelTest extends ModelTestCase
         $this->assertTrue($actual);
     }
 
-    /** @test */
+    #[Test]
     public function wasUpdated()
     {
         $notUpdated = $this->model->wasUpdated();
@@ -122,7 +123,7 @@ class ModelTest extends ModelTestCase
         $this->assertTrue($updated);
     }
 
-    /** @test */
+    #[Test]
     public function wasDeleted()
     {
         $notDeleted = $this->model->wasDeleted();
@@ -135,7 +136,7 @@ class ModelTest extends ModelTestCase
         $this->assertTrue($deleted);
     }
 
-    /** @test */
+    #[Test]
     public function mostRecentChange()
     {
         $expected = 'created';
@@ -145,7 +146,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($expected, $actual);
     }
 
-    /** @test */
+    #[Test]
     public function getDatetimeAttribute()
     {
         $expected = date('Y-m-d h:i a', strtotime($this->model->created_at));
@@ -156,7 +157,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->datetime());
     }
 
-    /** @test */
+    #[Test]
     public function getTimestampFormat()
     {
         $expected = 'Y-m-d h:i a';
@@ -166,7 +167,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($expected, $actual);
     }
 
-    /** @test */
+    #[Test]
     public function getCreatedTimestampAttribute()
     {
         $expected = date($this->model->getTimestampFormat(), strtotime($this->model->created_at));
@@ -177,7 +178,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->createdTimestamp());
     }
 
-    /** @test */
+    #[Test]
     public function getCreatedForHumansAttribute()
     {
         $expected = date('F j, Y', strtotime($this->model->created_at)).' at '.date('g:i a', strtotime($this->model->created_at));
@@ -188,7 +189,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->createdForHumans());
     }
 
-    /** @test */
+    #[Test]
     public function getCreatedDiffForHumansAttribute()
     {
         $expected = $this->model->created_at->diffForHumans();
@@ -199,7 +200,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->createdDiffForHumans());
     }
 
-    /** @test */
+    #[Test]
     public function getCreatedDateAttribute()
     {
         $expected = date('Y-m-d', strtotime($this->model->created_at));
@@ -210,7 +211,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->createdDate());
     }
 
-    /** @test */
+    #[Test]
     public function getCreatedTimeAttribute()
     {
         $expected = date('h:i A', strtotime($this->model->created_at));
@@ -221,7 +222,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->createdTime());
     }
 
-    /** @test */
+    #[Test]
     public function getUpdatedTimestampAttribute()
     {
         $expected = date($this->model->getTimestampFormat(), strtotime($this->model->updated_at));
@@ -232,7 +233,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->updatedTimestamp());
     }
 
-    /** @test */
+    #[Test]
     public function getUpdatedForHumansAttribute()
     {
         $expected = date('F j, Y', strtotime($this->model->updated_at)).' at '.date('g:i a', strtotime($this->model->updated_at));
@@ -243,7 +244,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->updatedForHumans());
     }
 
-    /** @test */
+    #[Test]
     public function getUpdatedDiffForHumansAttribute()
     {
         $expected = $this->model->updated_at->diffForHumans();
@@ -254,7 +255,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->updatedDiffForHumans());
     }
 
-    /** @test */
+    #[Test]
     public function getUpdatedDateAttribute()
     {
         $expected = date('Y-m-d', strtotime($this->model->updated_at));
@@ -265,7 +266,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->updatedDate());
     }
 
-    /** @test */
+    #[Test]
     public function getUpdatedTimeAttribute()
     {
         $expected = date('h:i A', strtotime($this->model->updated_at));
@@ -276,7 +277,7 @@ class ModelTest extends ModelTestCase
         $this->assertSame($actual, $this->model->updatedTime());
     }
 
-    /** @test */
+    #[Test]
     public function getUploadDirectory()
     {
         // todo: refactor to a trait test class

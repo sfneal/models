@@ -32,7 +32,7 @@ jobs:
 
             -   name: Install Laravel
                 run: |
-                    composer require "laravel/framework:^${{ matrix.laravel }}" --${{ matrix.dev-dependencies }} --${{ matrix.dependency-version }} --prefer-dist --no-interaction
+                    composer require "laravel/framework:^${{ matrix.laravel }}" --prefer-dist --no-interaction
 
             -   name: Execute tests
                 run: composer test

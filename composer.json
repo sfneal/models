@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/database": ">=8.2",
+        "laravel/framework": "^8.75|^9.0|^10.0|^11.0",
         "sfneal/actions": "^2.0",
         "sfneal/laravel-helpers": "^2.0",
         "sfneal/redis-helpers": "^1.2|^2.0|^3.0",
@@ -27,7 +27,6 @@
         "laravel/legacy-factories": ">=1.1.0",
         "orchestra/testbench": "^7.40|^8.0|9.0",
         "phpunit/phpunit": "^9.6|^10.0|^11.0",
-        "scrutinizer/ocular": "^1.8",
         "sfneal/array-helpers": "^3.0"
     },
     "autoload": {

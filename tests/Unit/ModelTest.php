@@ -67,11 +67,11 @@ class ModelTest extends ModelTestCase
     public function getIdHashAttribute()
     {
         $expected = crc32($this->model->getKey());
-        $actual = $this->model->id_hash;
+        $actual = $this->model->idHash();
 
         $this->assertIsInt($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getIdHashAttribute());
+        $this->assertSame($actual, $this->model->idHash());
     }
 
     /** @test */
@@ -149,11 +149,11 @@ class ModelTest extends ModelTestCase
     public function getDatetimeAttribute()
     {
         $expected = date('Y-m-d h:i a', strtotime($this->model->created_at));
-        $actual = $this->model->datetime;
+        $actual = $this->model->datetime();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getDatetimeAttribute());
+        $this->assertSame($actual, $this->model->datetime());
     }
 
     /** @test */
@@ -170,110 +170,110 @@ class ModelTest extends ModelTestCase
     public function getCreatedTimestampAttribute()
     {
         $expected = date($this->model->getTimestampFormat(), strtotime($this->model->created_at));
-        $actual = $this->model->created_timestamp;
+        $actual = $this->model->createdTimestamp();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getCreatedTimestampAttribute());
+        $this->assertSame($actual, $this->model->createdTimestamp());
     }
 
     /** @test */
     public function getCreatedForHumansAttribute()
     {
         $expected = date('F j, Y', strtotime($this->model->created_at)).' at '.date('g:i a', strtotime($this->model->created_at));
-        $actual = $this->model->created_for_humans;
+        $actual = $this->model->createdForHumans();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getCreatedForHumansAttribute());
+        $this->assertSame($actual, $this->model->createdForHumans());
     }
 
     /** @test */
     public function getCreatedDiffForHumansAttribute()
     {
         $expected = $this->model->created_at->diffForHumans();
-        $actual = $this->model->created_diff_for_humans;
+        $actual = $this->model->createdDiffForHumans();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getCreatedDiffForHumansAttribute());
+        $this->assertSame($actual, $this->model->createdDiffForHumans());
     }
 
     /** @test */
     public function getCreatedDateAttribute()
     {
         $expected = date('Y-m-d', strtotime($this->model->created_at));
-        $actual = $this->model->created_date;
+        $actual = $this->model->createdDate();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getCreatedDateAttribute());
+        $this->assertSame($actual, $this->model->createdDate());
     }
 
     /** @test */
     public function getCreatedTimeAttribute()
     {
         $expected = date('h:i A', strtotime($this->model->created_at));
-        $actual = $this->model->created_time;
+        $actual = $this->model->createdTime();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getCreatedTimeAttribute());
+        $this->assertSame($actual, $this->model->createdTime());
     }
 
     /** @test */
     public function getUpdatedTimestampAttribute()
     {
         $expected = date($this->model->getTimestampFormat(), strtotime($this->model->updated_at));
-        $actual = $this->model->updated_timestamp;
+        $actual = $this->model->updatedTimestamp();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getUpdatedTimestampAttribute());
+        $this->assertSame($actual, $this->model->updatedTimestamp());
     }
 
     /** @test */
     public function getUpdatedForHumansAttribute()
     {
         $expected = date('F j, Y', strtotime($this->model->updated_at)).' at '.date('g:i a', strtotime($this->model->updated_at));
-        $actual = $this->model->updated_for_humans;
+        $actual = $this->model->updatedForHumans();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getUpdatedForHumansAttribute());
+        $this->assertSame($actual, $this->model->updatedForHumans());
     }
 
     /** @test */
     public function getUpdatedDiffForHumansAttribute()
     {
         $expected = $this->model->updated_at->diffForHumans();
-        $actual = $this->model->updated_diff_for_humans;
+        $actual = $this->model->updatedDiffForHumans();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getUpdatedDiffForHumansAttribute());
+        $this->assertSame($actual, $this->model->updatedDiffForHumans());
     }
 
     /** @test */
     public function getUpdatedDateAttribute()
     {
         $expected = date('Y-m-d', strtotime($this->model->updated_at));
-        $actual = $this->model->updated_date;
+        $actual = $this->model->updatedDate();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getUpdatedDateAttribute());
+        $this->assertSame($actual, $this->model->updatedDate());
     }
 
     /** @test */
     public function getUpdatedTimeAttribute()
     {
         $expected = date('h:i A', strtotime($this->model->updated_at));
-        $actual = $this->model->updated_time;
+        $actual = $this->model->updatedTime();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
-        $this->assertSame($actual, $this->model->getUpdatedTimeAttribute());
+        $this->assertSame($actual, $this->model->updatedTime());
     }
 
     /** @test */

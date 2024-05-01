@@ -192,3 +192,9 @@ All notable changes to `models` will be documented in this file
 
 ## 3.0.1 - 2024-04-15
 - fix issue with `Model::wasDeleted()` method
+
+
+## 4.0.0 - 2024-05-01
+- add support for Laravel v11
+- due to changes to Laravel v11, access to magic attributes (like 'created_date') can only be called from their underlying methods
+- refactored `get{Attribute}Attribute()` accessor methods to `{attribute}()` (e.g. `getCreatedDateAttribute()` changed to `createdDate()`)

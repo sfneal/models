@@ -140,7 +140,7 @@ abstract class Model extends EloquentModel
      *
      * @return int
      */
-    public function getIdHashAttribute(): int
+    public function idHash(): int
     {
         return crc32($this->getKey());
     }
@@ -259,7 +259,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getDatetimeAttribute(): string
+    public function datetime(): string
     {
         return date('Y-m-d h:i a', strtotime($this->attributes['created_at']));
     }
@@ -271,7 +271,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getCreatedTimestampAttribute(): string
+    public function createdTimestamp(): string
     {
         return date($this->getTimestampFormat(), strtotime($this->attributes['created_at']));
     }
@@ -283,7 +283,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getCreatedForHumansAttribute(): string
+    public function createdForHumans(): string
     {
         return $this->getDatetimeForHumans(strtotime($this->attributes['created_at']));
     }
@@ -295,7 +295,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getCreatedDiffForHumansAttribute(): string
+    public function createdDiffForHumans(): string
     {
         return (new Carbon($this->attributes['created_at']))->diffForHumans();
     }
@@ -305,7 +305,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getCreatedDateAttribute(): string
+    public function createdDate(): string
     {
         return date('Y-m-d', strtotime($this->attributes['created_at']));
     }
@@ -315,7 +315,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getCreatedTimeAttribute(): string
+    public function createdTime(): string
     {
         return date('h:i A', strtotime($this->attributes['created_at']));
     }
@@ -327,7 +327,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getUpdatedTimestampAttribute(): string
+    public function updatedTimestamp(): string
     {
         return date($this->getTimestampFormat(), strtotime($this->attributes['updated_at']));
     }
@@ -339,7 +339,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getUpdatedForHumansAttribute(): string
+    public function updatedForHumans(): string
     {
         return $this->getDatetimeForHumans(strtotime($this->attributes['updated_at']));
     }
@@ -351,7 +351,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getUpdatedDiffForHumansAttribute(): string
+    public function updatedDiffForHumans(): string
     {
         return (new Carbon($this->attributes['updated_at']))->diffForHumans();
     }
@@ -361,7 +361,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getUpdatedDateAttribute(): string
+    public function updatedDate(): string
     {
         return date('Y-m-d', strtotime($this->attributes['updated_at']));
     }
@@ -371,7 +371,7 @@ abstract class Model extends EloquentModel
      *
      * @return string
      */
-    public function getUpdatedTimeAttribute(): string
+    public function updatedTime(): string
     {
         return date('h:i A', strtotime($this->attributes['updated_at']));
     }

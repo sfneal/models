@@ -22,6 +22,9 @@ class FactoryTest extends ModelTestCase
     /** @test */
     public function attributes_are_correct_types()
     {
+        // Age
+        $this->assertIsInt($this->model->age);
+
         // Name attributes
         $this->assertIsString($this->model->name_full);
         $this->assertStringContainsString(', ', $this->model->name_last_first);

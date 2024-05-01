@@ -158,9 +158,7 @@ class QueryBuilder extends EloquentBuilder
      */
     public function getFlatArray(string $column): array
     {
-        return array_map(function ($collection) use ($column) {
-            return $collection[$column];
-        }, $this->distinct()->get($column)->toArray());
+        return $this->distinct()->pluck($column)->toArray();
     }
 
     /**

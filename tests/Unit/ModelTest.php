@@ -67,7 +67,7 @@ class ModelTest extends ModelTestCase
     public function getIdHashAttribute()
     {
         $expected = crc32($this->model->getKey());
-        $actual = $this->model->id_hash;
+        $actual = $this->model->getIdHashAttribute();
 
         $this->assertIsInt($actual);
         $this->assertSame($expected, $actual);
@@ -149,7 +149,7 @@ class ModelTest extends ModelTestCase
     public function getDatetimeAttribute()
     {
         $expected = date('Y-m-d h:i a', strtotime($this->model->created_at));
-        $actual = $this->model->datetime;
+        $actual = $this->model->getDatetimeAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -170,7 +170,7 @@ class ModelTest extends ModelTestCase
     public function getCreatedTimestampAttribute()
     {
         $expected = date($this->model->getTimestampFormat(), strtotime($this->model->created_at));
-        $actual = $this->model->created_timestamp;
+        $actual = $this->model->getCreatedTimestampAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -181,7 +181,7 @@ class ModelTest extends ModelTestCase
     public function getCreatedForHumansAttribute()
     {
         $expected = date('F j, Y', strtotime($this->model->created_at)).' at '.date('g:i a', strtotime($this->model->created_at));
-        $actual = $this->model->created_for_humans;
+        $actual = $this->model->getCreatedForHumansAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -192,7 +192,7 @@ class ModelTest extends ModelTestCase
     public function getCreatedDiffForHumansAttribute()
     {
         $expected = $this->model->created_at->diffForHumans();
-        $actual = $this->model->created_diff_for_humans;
+        $actual = $this->model->getCreatedDiffForHumansAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -203,7 +203,7 @@ class ModelTest extends ModelTestCase
     public function getCreatedDateAttribute()
     {
         $expected = date('Y-m-d', strtotime($this->model->created_at));
-        $actual = $this->model->created_date;
+        $actual = $this->model->getCreatedDateAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -214,7 +214,7 @@ class ModelTest extends ModelTestCase
     public function getCreatedTimeAttribute()
     {
         $expected = date('h:i A', strtotime($this->model->created_at));
-        $actual = $this->model->created_time;
+        $actual = $this->model->getCreatedTimeAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -225,7 +225,7 @@ class ModelTest extends ModelTestCase
     public function getUpdatedTimestampAttribute()
     {
         $expected = date($this->model->getTimestampFormat(), strtotime($this->model->updated_at));
-        $actual = $this->model->updated_timestamp;
+        $actual = $this->model->getUpdatedTimestampAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -236,7 +236,7 @@ class ModelTest extends ModelTestCase
     public function getUpdatedForHumansAttribute()
     {
         $expected = date('F j, Y', strtotime($this->model->updated_at)).' at '.date('g:i a', strtotime($this->model->updated_at));
-        $actual = $this->model->updated_for_humans;
+        $actual = $this->model->getUpdatedForHumansAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -247,7 +247,7 @@ class ModelTest extends ModelTestCase
     public function getUpdatedDiffForHumansAttribute()
     {
         $expected = $this->model->updated_at->diffForHumans();
-        $actual = $this->model->updated_diff_for_humans;
+        $actual = $this->model->getUpdatedDiffForHumansAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -258,7 +258,7 @@ class ModelTest extends ModelTestCase
     public function getUpdatedDateAttribute()
     {
         $expected = date('Y-m-d', strtotime($this->model->updated_at));
-        $actual = $this->model->updated_date;
+        $actual = $this->model->getUpdatedDateAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);
@@ -269,7 +269,7 @@ class ModelTest extends ModelTestCase
     public function getUpdatedTimeAttribute()
     {
         $expected = date('h:i A', strtotime($this->model->updated_at));
-        $actual = $this->model->updated_time;
+        $actual = $this->model->getUpdatedTimeAttribute();
 
         $this->assertIsString($actual);
         $this->assertSame($expected, $actual);

@@ -3,18 +3,19 @@
 namespace Sfneal\Models\Tests\Feature\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Models\Tests\Assets\Models\PeopleHard;
 use Sfneal\Models\Tests\SeededTestCase;
 
 class SoftDeletesIgnoredTest extends SeededTestCase
 {
-    /** @test */
+    #[Test]
     public function soft_deletes_scope_is_not_used()
     {
         $this->assertFalse(PeopleHard::hasGlobalScope(SoftDeletingScope::class));
     }
 
-    /** @test */
+    #[Test]
     public function deleted_at_attribute_does_not_exist()
     {
         $model = PeopleHard::factory()->create();

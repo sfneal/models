@@ -2,12 +2,13 @@
 
 namespace Sfneal\Models\Tests\Feature;
 
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Models\Tests\Assets\Models\People;
 use Sfneal\Models\Tests\TestCase;
 
 class MigrationTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_access_the_database()
     {
         // Save a new Address

@@ -2,6 +2,7 @@
 
 namespace Sfneal\Models\Tests\Feature\Builders;
 
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Builders\QueryBuilder;
 use Sfneal\Models\Tests\Assets\Builders\PeopleBuilder;
 use Sfneal\Models\Tests\Assets\Models\People;
@@ -48,7 +49,7 @@ class WhereLikeTest extends SeededTestCase
         $this->whereLikeAssertions($query);
     }
 
-    /** @test */
+    #[Test]
     public function orWhereLike()
     {
         // Basic usage
@@ -58,7 +59,7 @@ class WhereLikeTest extends SeededTestCase
         $this->whereLikeAssertions($query);
     }
 
-    /** @test */
+    #[Test]
     public function orWhereBool()
     {
         // Basic usage

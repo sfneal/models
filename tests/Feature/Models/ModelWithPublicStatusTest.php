@@ -2,12 +2,13 @@
 
 namespace Sfneal\Models\Tests\Feature\Models;
 
+use PHPUnit\Framework\Attributes\Test;
 use Sfneal\Models\Tests\Assets\Models\People;
 use Sfneal\Models\Tests\SeededTestCase;
 
 class ModelWithPublicStatusTest extends SeededTestCase
 {
-    /** @test */
+    #[Test]
     public function isPublic()
     {
         People::query()
@@ -18,7 +19,7 @@ class ModelWithPublicStatusTest extends SeededTestCase
             });
     }
 
-    /** @test */
+    #[Test]
     public function isPrivate()
     {
         People::query()
@@ -29,7 +30,7 @@ class ModelWithPublicStatusTest extends SeededTestCase
             });
     }
 
-    /** @test */
+    #[Test]
     public function updatePublicStatus()
     {
         $model = People::factory()->create(['public_status' => null]);

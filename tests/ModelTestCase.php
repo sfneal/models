@@ -2,6 +2,7 @@
 
 namespace Sfneal\Models\Tests;
 
+use Illuminate\Support\Collection;
 use Sfneal\Models\Tests\Assets\Models\People;
 
 class ModelTestCase extends TestCase
@@ -21,5 +22,10 @@ class ModelTestCase extends TestCase
         parent::setUp();
 
         $this->model = People::factory()->create();
+    }
+
+    protected function resolvePhpUnitAnnotations(): Collection
+    {
+        return collect();
     }
 }

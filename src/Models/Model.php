@@ -103,8 +103,12 @@ abstract class Model extends EloquentModel
      */
     public function hasAttribute($key): bool
     {
-        // Determine that the attribute exists
-        return array_key_exists($key, $this->attributesToArray());
+        // Laravel v11 added a `hasAttribute()` method, use parent method if available
+        try {
+            return parent::hasAttribute($key);
+        } catch (\BadMethodCallException $methodCallException) {
+            return array_key_exists($key, $this->attributes);
+        }
     }
 
     /**
@@ -120,7 +124,7 @@ abstract class Model extends EloquentModel
     {
         // Determine that the attribute exists and weather it is fillable
         return
-            array_key_exists($key, $this->attributesToArray()) &&
+            $this->hasAttribute($key) &&
             in_array($key, $this->getFillable());
     }
 

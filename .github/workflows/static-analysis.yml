@@ -16,8 +16,9 @@ jobs:
       matrix:
         os: [ ubuntu-latest ]
         php: [8.1, 8.2, 8.3]
+        dependency-version: [prefer-lowest, prefer-stable]
 
-    name: Static Analysis
+    name: Static Analysis | ${{ matrix.php }} - ${{ matrix.dependency-version }}
 
     steps:
       - name: Checkout code
@@ -43,10 +44,10 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install composer dependencies
-        run: composer install
+        run: composer update --${{ matrix.dependency-version }}
 
       - name: Install Larastan
-        run: composer require nunomaduro/larastan:^2.0 --dev
+        run: composer require larastan/larastan:^2.0 --dev
 
       - name: Run Larastan static analysis
         run: ./vendor/bin/phpstan analyse --memory-limit=2G

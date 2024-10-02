@@ -30,11 +30,11 @@ if [ -n "$COMPOSER_FLAGS" ]; then
     TAG="${TAG}-${COMPOSER_FLAGS:8}"
 fi
 
-# Export $TAG as a global variable, exposing to docker-compose.yml
+# Export $TAG as a global variable, exposing to docker compose.yml
 export TAG
 
 # Shut down running containers
-docker-compose down -v --remove-orphans
+docker compose down -v --remove-orphans
 
 # Build the image
 echo "Building image: stephenneal/models:${TAG}"
@@ -44,7 +44,7 @@ docker build -t stephenneal/models:"${TAG}" -t stephenneal/models:latest \
     --build-arg composer_flags="${COMPOSER_FLAGS}" \
      .
 
-docker-compose up -d
+docker compose up -d
 
 docker logs -f models
 

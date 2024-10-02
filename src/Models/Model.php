@@ -105,6 +105,7 @@ abstract class Model extends EloquentModel
     {
         // Laravel v11 added a `hasAttribute()` method, use parent method if available
         try {
+            // @phpstan-ignore-next-line
             return parent::hasAttribute($key);
         } catch (\BadMethodCallException $methodCallException) {
             return array_key_exists($key, $this->attributes);

@@ -1,5 +1,5 @@
 includes:
-    - ./vendor/nunomaduro/larastan/extension.neon
+    - ./vendor/larastan/larastan/extension.neon
 
 parameters:
 
@@ -9,7 +9,8 @@ parameters:
     # The level 9 is the highest level
     level: 1
 
-#    ignoreErrors:
-#        - '#PHPDoc tag @var#'
-
-    checkMissingIterableValueType: false
+    ignoreErrors:
+        -
+            message: '#Call to an undefined static method [a-zA-Z0-9\\_]+::hasAttribute\(\)#'
+            path: src/Models/Model.php
+            reportUnmatched: false

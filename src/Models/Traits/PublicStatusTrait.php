@@ -37,7 +37,7 @@ trait PublicStatusTrait
      * @param  int|null  $status
      * @return bool
      */
-    public function updatePublicStatus(int $status = null): bool
+    public function updatePublicStatus(?int $status = null): bool
     {
         return $this->update([
             'public_status' => $status ?? ($this->public_status == 1 ? 0 : 1),

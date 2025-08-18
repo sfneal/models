@@ -167,7 +167,7 @@ class QueryBuilder extends EloquentBuilder
      * @param  string|null  $raw
      * @return $this
      */
-    public function selectRawJson(string $raw = null): self
+    public function selectRawJson(?string $raw = null): self
     {
         $this->withoutGlobalScopes();
         $this->selectRaw($raw ?? $this->selectRawJson);
@@ -194,7 +194,7 @@ class QueryBuilder extends EloquentBuilder
      * @param  int|null  $model_id
      * @return QueryBuilder|Collection|Model|null
      */
-    public function getNextModel(int $model_id = null)
+    public function getNextModel(?int $model_id = null)
     {
         return $this->find($this->getNextModelId($model_id));
     }
@@ -205,7 +205,7 @@ class QueryBuilder extends EloquentBuilder
      * @param  int|null  $model_id
      * @return QueryBuilder|Collection|Model|null
      */
-    public function getPreviousModel(int $model_id = null)
+    public function getPreviousModel(?int $model_id = null)
     {
         return $this->find($this->getPreviousModelId($model_id));
     }
@@ -216,7 +216,7 @@ class QueryBuilder extends EloquentBuilder
      * @param  int|null  $model_id
      * @return mixed
      */
-    public function getNextModelId(int $model_id = null)
+    public function getNextModelId(?int $model_id = null)
     {
         return $this
             ->where($this->model->getKeyName(), '>', $model_id ?? $this->model->getKey())
@@ -229,7 +229,7 @@ class QueryBuilder extends EloquentBuilder
      * @param  int|null  $model_id
      * @return mixed
      */
-    public function getPreviousModelId(int $model_id = null)
+    public function getPreviousModelId(?int $model_id = null)
     {
         return $this
             ->where($this->model->getKeyName(), '<', $model_id ?? $this->model->getKey())

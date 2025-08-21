@@ -11,7 +11,7 @@ trait Datetime
      * @param  string|null  $datetime
      * @return string
      */
-    private static function datetime(string $format, string $datetime = null): string
+    private static function datetime(string $format, ?string $datetime = null): string
     {
         return (isset($datetime)) ? date($format, strtotime($datetime)) : '';
     }

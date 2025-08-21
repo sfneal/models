@@ -12,5 +12,5 @@ interface UpdatePublicStatusInterface
      * @param  int|null  $status
      * @return bool
      */
-    public function updatePublicStatus(int $status = null): bool;
+    public function updatePublicStatus(?int $status = null): bool;
 }

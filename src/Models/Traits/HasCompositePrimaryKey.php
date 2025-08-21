@@ -42,7 +42,7 @@ trait HasCompositePrimaryKey
      * @param  string|null  $keyName
      * @return mixed
      */
-    protected function getKeyForSaveQuery(string $keyName = null): mixed
+    protected function getKeyForSaveQuery(?string $keyName = null): mixed
     {
         if (is_null($keyName)) {
             $keyName = $this->getKeyName();
